@@ -10,9 +10,9 @@ const routerHome = require('./router/routerHome');
 
 
 app.set('view engine', 'ejs');
-app.set("views", "./public/views");
+app.set("views", "app/public/views");
 
-app.use(express.static('public')); 
+app.use(express.static('app/public')); 
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(morgan('dev'));
 app.use(cookieParser());
