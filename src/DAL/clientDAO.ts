@@ -1,2 +1,0 @@
-let connexion = require('./knexImpl');
-
