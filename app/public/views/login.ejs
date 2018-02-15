@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./partials/css.ejs   %>
+    <title>Document</title>
+</head>
+
+    <body class="text-center">
+        <form class="form-signin" action="/login" method="post">
+          <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+          <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="text" id="inputNom" class="form-control" placeholder="Email address" name="nom" required autofocus value=  <% if (user) { %>
+            <%= user.nom %> 
+         <% } %> >
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required value=<% if (user) { %>
+            <%= user.password %> 
+         <% } %> >
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> Remember me
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+          <% if (user) { %>
+            <p>erreur, mot de passe ou username incorrect</p>  
+         <% } %>
+          <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        </form>
+      <% include ./partials/script.ejs   %>
+</body>
+</html>

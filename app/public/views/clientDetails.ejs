@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./partials/css.ejs   %>
+    <title>Document</title>
+</head>
+<body>
+        <% include ./partials/header.ejs   %>
+        <div class="container main">
+                <div class="card mt-5">
+                        <div class="card-block">
+                          <h4 class="card-title"><%=  client.prenom + " " + client.nom %></h4>
+                          <h6 class="card-subtitle mb-2 text-muted">Habite à <%= client.ville %></h6>
+                          <p class="card-text"><%= client.telephone %></p>
+                          <button class="btn btn-primary" id="modify_client_btn">Modifier</button>
+
+                        </div>
+                      </div>
+
+          </div><!-- /.container -->
+
+         <% include ./partials/script.ejs %>
+</body>
+</html>

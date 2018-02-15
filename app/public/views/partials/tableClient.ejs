@@ -1,0 +1,23 @@
+<div class="row">
+<table class="table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Ville</th>
+            <th>Téléphone</th>
+          </tr>
+        </thead>
+        <tbody class="body_table" id="table_body">
+            <% data.forEach(function (d) { %>
+              <tr>
+                  <td><%- d.nom %></td>
+                  <td><%- d.prenom %></td>
+                  <td><%- d.ville %></td>
+                  <td><%- d.telephone %></td>
+                  <td><a href="/clients/searchById?id=<%= d._id %>" ><button class="btn btn-info">Détails</button></a></td>
+              </tr>
+              <% }); %>
+        </tbody>
+      </table>
+    </div>
