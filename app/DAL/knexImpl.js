@@ -9,7 +9,6 @@ let knexImpl = require('knex')({
         password: config.password,
         database: config.database,
     },
-    debug: true
 });
 module.exports = knexImpl;
 //# sourceMappingURL=knexImpl.js.map

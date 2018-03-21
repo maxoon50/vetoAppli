@@ -9,7 +9,7 @@ connection:{
     password: config.password,
     database: config.database,
 },
-debug: true
+
 });
 
  export = knexImpl;
