@@ -8,12 +8,38 @@ class UtilisateurBLL {
 UtilisateurBLL.checkLogin = (pPseudo, pPassword) => {
     let dao = new utilisateurDAO_1.DAOUser();
     return new Promise((resolve, reject) => {
-        dao.getByName(pPseudo).then((user) => {
+        dao.getByName(pPseudo)
+            .then((user) => {
             if (user.password == pPassword) {
                 resolve(user);
             }
             reject({ error: Error_1.Error.NotFound });
-        }).catch((error) => {
+        })
+            .catch((error) => {
+            reject(error);
+        });
+    });
+};
+UtilisateurBLL.getAll = () => {
+    let dao = new utilisateurDAO_1.DAOUser();
+    return new Promise((resolve, reject) => {
+        dao.getAll()
+            .then((users) => {
+            resolve(users);
+        })
+            .catch((error) => {
+            reject(error);
+        });
+    });
+};
+UtilisateurBLL.getById = (id) => {
+    let dao = new utilisateurDAO_1.DAOUser();
+    return new Promise((resolve, reject) => {
+        dao.getById(id)
+            .then((user) => {
+            resolve(user);
+        })
+            .catch((error) => {
             reject(error);
         });
     });

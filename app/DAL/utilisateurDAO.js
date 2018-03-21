@@ -15,7 +15,21 @@ class DAOUser {
             return null;
         };
         this.getAll = () => {
-            return null;
+            return new Promise((resolve, reject) => {
+                connexion('utilisateur')
+                    .then((result) => {
+                    var retArr = [];
+                    if (result.length) {
+                        for (var i = 0; i < result.length; i++) {
+                            retArr.push(new utilisateur_1.Utilisateur(result[i].pseudo, result[i].password, result[i].utilisateur_role, result[i].id));
+                        }
+                    }
+                    resolve(retArr);
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
+            });
         };
         this.getById = (id) => {
             return new Promise((resolve, reject) => {

@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c6e4a1e-22e2-4847-be8f-ef220d5bac92" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/router/routerClients.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/router/routerClients.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/router/routerClients.ts" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/BLL/utilisateurBLL.js" afterPath="$PROJECT_DIR$/app/BLL/utilisateurBLL.js" />
+      <change beforePath="$PROJECT_DIR$/app/BLL/utilisateurBLL.js.map" afterPath="$PROJECT_DIR$/app/BLL/utilisateurBLL.js.map" />
       <change beforePath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js" afterPath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js" />
       <change beforePath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js.map" afterPath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js.map" />
       <change beforePath="$PROJECT_DIR$/app/server.js" afterPath="$PROJECT_DIR$/app/server.js" />
       <change beforePath="$PROJECT_DIR$/app/server.js.map" afterPath="$PROJECT_DIR$/app/server.js.map" />
+      <change beforePath="$PROJECT_DIR$/src/BLL/utilisateurBLL.ts" afterPath="$PROJECT_DIR$/src/BLL/utilisateurBLL.ts" />
       <change beforePath="$PROJECT_DIR$/src/DAL/utilisateurDAO.ts" afterPath="$PROJECT_DIR$/src/DAL/utilisateurDAO.ts" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/IDALInterface.ts" afterPath="$PROJECT_DIR$/src/interfaces/IDALInterface.ts" />
       <change beforePath="$PROJECT_DIR$/src/server.ts" afterPath="$PROJECT_DIR$/src/server.ts" />
@@ -33,16 +39,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="server.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -53,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routerClients.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routerClients.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router/routerClients.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state relative-caret-position="80">
+              <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -66,11 +62,9 @@
       <file leaf-file-name="routerLogin.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router/routerLogin.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="42" selection-end-column="6" />
-              <folding>
-                <element signature="e#74#112#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="48">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="53" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,13 +99,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utilisateurDAO.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utilisateurDAO.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DAL/utilisateurDAO.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="452">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="e#40#86#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utilisateurBLL.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BLL/utilisateurBLL.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+              <folding>
+                <element signature="e#92#138#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,7 +127,7 @@
         <entry file="file://$PROJECT_DIR$/src/interfaces/IDALInterface.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="64">
-              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+              <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -146,6 +152,7 @@
         <option value="$PROJECT_DIR$/src/router/routerLogin.ts" />
         <option value="$PROJECT_DIR$/src/server.ts" />
         <option value="$PROJECT_DIR$/src/router/routerClients.ts" />
+        <option value="$PROJECT_DIR$/src/BLL/utilisateurBLL.ts" />
         <option value="$PROJECT_DIR$/src/DAL/utilisateurDAO.ts" />
         <option value="$PROJECT_DIR$/src/interfaces/IDALInterface.ts" />
       </list>
@@ -292,12 +299,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1521653524673</updated>
-      <workItem from="1521653526182" duration="4864000" />
+      <workItem from="1521653526182" duration="6142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4864000" />
+    <option name="totallyTimeSpent" value="6142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="107" y="0" width="1778" height="1075" extended-state="0" />
@@ -375,14 +382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BLL/utilisateurBLL.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -415,16 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/routerLogin.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="42" selection-end-column="6" />
-          <folding>
-            <element signature="e#74#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/router/routerHome.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -441,12 +430,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAL/utilisateurDAO.ts">
+    <entry file="file://$PROJECT_DIR$/src/router/routerLogin.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="37" column="8" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router/routerClients.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BLL/utilisateurBLL.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="30" column="33" lean-forward="true" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
           <folding>
-            <element signature="e#40#86#0" expanded="true" />
+            <element signature="e#92#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -454,16 +459,18 @@
     <entry file="file://$PROJECT_DIR$/src/interfaces/IDALInterface.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <caret line="4" column="28" lean-forward="false" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/routerClients.ts">
+    <entry file="file://$PROJECT_DIR$/src/DAL/utilisateurDAO.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="452">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#86#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
