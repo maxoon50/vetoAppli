@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const app = express();
 const routerLogin = require('./router/routerLogin');
 const routerHome = require('./router/routerHome');
+const routerClients = require('./router/routerClients');
 app.set('view engine', 'ejs');
 app.set("views", "app/public/views");
 app.use(express.static('app/public'));
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 app.use('/', routerLogin);
 app.use(expiredSession, (req, res, next) => { next(); });
 app.use('/home', routerHome);
+app.use('/clients', routerClients);
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!");
 });

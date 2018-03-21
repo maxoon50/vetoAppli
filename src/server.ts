@@ -7,7 +7,7 @@ const app = express();
 
 const routerLogin = require('./router/routerLogin');
 const routerHome = require('./router/routerHome');
-
+const routerClients = require('./router/routerClients');
 
 app.set('view engine', 'ejs');
 app.set("views", "app/public/views");
@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 app.use('/', routerLogin);
 app.use(expiredSession, (req, res, next)=>{ next();});
 app.use('/home', routerHome);
-
+app.use('/clients', routerClients);
 
 
 
