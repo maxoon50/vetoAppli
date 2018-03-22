@@ -7,13 +7,31 @@ import {Error } from '../Enums/Error';
 
 export class  DAOUser implements DALInterface <Utilisateur>{
 
+    TABLE: string = "utilisateur";
+
     constructor(){
 
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    insertOne : (Utilisateur: Utilisateur) => any = ()=>{
-        return null;
+    insertOne : (user: Utilisateur) => Promise<Utilisateur> = (user)=>{
+
+        return new Promise((resolve, reject)=>{
+            connexion(this.TABLE)
+                .insert({
+                    pseudo: user.pseudo,
+                    password: user.password,
+                    utilisateur_role: user.role
+                })
+                .returning('id')
+                .then((id)=>{
+                    resolve(new Utilisateur(user.pseudo, user.password, user.role, id));
+                })
+                .catch((err)=>{
+                    reject(err);
+                })
+        })
+
     }
 
 
@@ -34,7 +52,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
         return new Promise((resolve,reject)=>{
 
-            connexion('utilisateur')
+            connexion(this.TABLE)
 
                 .then((result)=>{
                     var retArr : Utilisateur[] = [];
@@ -57,7 +75,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
     getById: (id: number) => Promise<Utilisateur> = (id)=>{
         return new Promise((resolve,reject)=>{
 
-            connexion('utilisateur').where('id', id)
+            connexion(this.TABLE).where('id', id)
 
                 .then((result)=>{
                     if(result.length){
@@ -79,7 +97,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
         return new Promise((resolve,reject)=>{
 
-            connexion('utilisateur').where('pseudo', pPseudo)
+            connexion(this.TABLE).where('pseudo', pPseudo)
 
                 .then((result)=>{
               if(result.length){

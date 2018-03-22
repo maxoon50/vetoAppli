@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c6e4a1e-22e2-4847-be8f-ef220d5bac92" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js" afterPath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js" />
+      <change beforePath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js.map" afterPath="$PROJECT_DIR$/app/DAL/utilisateurDAO.js.map" />
+      <change beforePath="$PROJECT_DIR$/src/DAL/utilisateurDAO.ts" afterPath="$PROJECT_DIR$/src/DAL/utilisateurDAO.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,14 +33,14 @@
       <file leaf-file-name="utilisateur.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BO/utilisateur.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="32">
+              <caret line="2" column="79" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="79" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="client.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BO/client.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -78,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utilisateurDAO.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="utilisateurDAO.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DAL/utilisateurDAO.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="400">
+              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
               <folding>
                 <element signature="e#40#86#0" expanded="true" />
               </folding>
@@ -141,12 +143,12 @@
         <option value="$PROJECT_DIR$/src/server.ts" />
         <option value="$PROJECT_DIR$/src/router/routerClients.ts" />
         <option value="$PROJECT_DIR$/src/BLL/utilisateurBLL.ts" />
-        <option value="$PROJECT_DIR$/src/DAL/utilisateurDAO.ts" />
         <option value="$PROJECT_DIR$/src/interfaces/IDALInterface.ts" />
         <option value="$PROJECT_DIR$/config.json" />
         <option value="$PROJECT_DIR$/src/Enums/Error.ts" />
         <option value="$PROJECT_DIR$/src/router/routerLogin.ts" />
         <option value="$PROJECT_DIR$/src/BO/client.ts" />
+        <option value="$PROJECT_DIR$/src/DAL/utilisateurDAO.ts" />
       </list>
     </option>
   </component>
@@ -304,12 +306,12 @@
       <option name="presentableId" value="Default" />
       <updated>1521653524673</updated>
       <workItem from="1521653526182" duration="6757000" />
-      <workItem from="1521755124076" duration="1156000" />
+      <workItem from="1521755124076" duration="1972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7913000" />
+    <option name="totallyTimeSpent" value="8729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="107" y="0" width="1778" height="1075" extended-state="0" />
@@ -426,16 +428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAL/utilisateurDAO.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BLL/utilisateurBLL.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -480,19 +472,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BO/utilisateur.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="6" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BO/client.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BO/utilisateur.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="79" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAL/utilisateurDAO.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding>
+            <element signature="e#40#86#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
