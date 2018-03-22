@@ -21,25 +21,17 @@ routerLogin.route('/login')
     .post((req, res)=>{
         UtilisateurBLL.checkLogin(req.body.pseudo, req.body.password)
             .then((response)=>{
-            req.session.user = response;
-            res.redirect('/home');
+                req.session.user = response;
+                res.redirect('/home');
             })
             .catch((err)=>{
-            if(err.error && err.error == Error.NotFound){
-                var user={
-                    nom : req.body.nom,
+                let typeError = err.error && err.error == Error.NotFound ? "Erreur login / mot de passe incorrect(s)" : "Un problème est survenu, veuillez contacter l'administrateur";
+                var user = {
+                    nom: req.body.nom,
                     password: req.body.password,
                 };
                 res.render("login.ejs", {user : user, error: "Erreur login / mot de passe incorrect(s)"});
-            }else{
-                var user={
-                    nom : req.body.nom,
-                    password: req.body.password,
-                };
-                res.render("login.ejs", {user : user, error: "Erreur, veuillez contacter l'administrateur"});
-            }
         })
-     
     })
 
 
