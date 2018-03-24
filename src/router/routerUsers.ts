@@ -4,7 +4,7 @@ const routerHome = express.Router();
 
 
 routerHome.get('/', (req, res)=>{
-    res.render("client.ejs");
+    res.render("users.ejs");
 });
 
 

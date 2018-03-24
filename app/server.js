@@ -7,6 +7,7 @@ const app = express();
 const routerLogin = require('./router/routerLogin');
 const routerHome = require('./router/routerHome');
 const routerClients = require('./router/routerClients');
+const routerUsers = require('./router/routerUsers');
 app.set('view engine', 'ejs');
 app.set("views", "app/public/views");
 app.use(express.static('app/public'));
@@ -40,6 +41,7 @@ app.use('/', routerLogin);
 app.use(expiredSession, (req, res, next) => { next(); });
 app.use('/home', routerHome);
 app.use('/clients', routerClients);
+app.use('/users', routerUsers);
 app.use(function (req, res, next) {
     res.status(404).send("Sorry can't find that!");
 });
