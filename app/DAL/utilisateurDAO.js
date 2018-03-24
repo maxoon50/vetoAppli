@@ -23,11 +23,33 @@ class DAOUser {
                 });
             });
         };
-        this.remove = () => {
-            return null;
+        this.remove = (id) => {
+            return new Promise((resolve, reject) => {
+                connexion(this.TABLE)
+                    .where('id', id)
+                    .del()
+                    .then((response) => {
+                    resolve(response);
+                })
+                    .catch((err) => {
+                    reject(err);
+                });
+            });
         };
-        this.update = () => {
-            return null;
+        this.update = (user) => {
+            return new Promise((resolve, reject) => {
+                connexion(this.TABLE)
+                    .where('id', user.id)
+                    .update({
+                    pseudo: user.pseudo,
+                    password: user.password,
+                    utilisateur_role: user.role
+                }).then((response) => {
+                    resolve(response);
+                }).catch((err) => {
+                    reject(err);
+                });
+            });
         };
         this.getAll = () => {
             return new Promise((resolve, reject) => {

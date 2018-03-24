@@ -36,14 +36,39 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    remove : (id: number) => any = ()=>{
-        return null;
+    remove : (id: number) => Promise<any> = (id)=>{
+
+        return new Promise((resolve, reject)=>{
+            connexion(this.TABLE)
+                .where('id', id)
+                .del()
+                .then((response)=>{
+                    resolve(response);
+                })
+                .catch((err)=>{
+                    reject(err);
+                })
+        })
     }
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    update : (Utilisateur: Utilisateur) => any = ()=>{
-        return null;
+    update : (user: Utilisateur) => Promise<any> = (user)=>{
+
+        return new Promise((resolve, reject)=>{
+            connexion(this.TABLE)
+                .where('id', user.id)
+                .update({
+                    pseudo: user.pseudo,
+                    password: user.password,
+                    utilisateur_role: user.role
+                }).then((response)=>{
+                    resolve(response);
+                }).catch((err)=>{
+                    reject(err);
+                })
+        })
+
     }
 
 
@@ -93,7 +118,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-   getByName : (Utilisateur: string) => Promise<Utilisateur> = (pPseudo : string)=>{
+   getByName : (pseudo: string) => Promise<Utilisateur> = (pPseudo : string)=>{
 
         return new Promise((resolve,reject)=>{
 
