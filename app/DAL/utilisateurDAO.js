@@ -44,8 +44,8 @@ class DAOUser {
                     pseudo: user.pseudo,
                     password: user.password,
                     utilisateur_role: user.role
-                }).then((response) => {
-                    resolve(response);
+                }).then((nbrLineUpdated) => {
+                    resolve(nbrLineUpdated);
                 }).catch((err) => {
                     reject(err);
                 });

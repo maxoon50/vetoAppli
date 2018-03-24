@@ -14,7 +14,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    insertOne : (user: Utilisateur) => Promise<Utilisateur> = (user)=>{
+    public insertOne : (user: Utilisateur) => Promise<Utilisateur> = (user)=>{
 
         return new Promise((resolve, reject)=>{
             connexion(this.TABLE)
@@ -36,7 +36,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    remove : (id: number) => Promise<any> = (id)=>{
+    public remove : (id: number) => Promise<number> = (id)=>{
 
         return new Promise((resolve, reject)=>{
             connexion(this.TABLE)
@@ -53,7 +53,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    update : (user: Utilisateur) => Promise<any> = (user)=>{
+    public update : (user: Utilisateur) => Promise<number> = (user)=>{
 
         return new Promise((resolve, reject)=>{
             connexion(this.TABLE)
@@ -62,8 +62,8 @@ export class  DAOUser implements DALInterface <Utilisateur>{
                     pseudo: user.pseudo,
                     password: user.password,
                     utilisateur_role: user.role
-                }).then((response)=>{
-                    resolve(response);
+                }).then((nbrLineUpdated)=>{
+                    resolve(nbrLineUpdated);
                 }).catch((err)=>{
                     reject(err);
                 })
@@ -73,7 +73,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    getAll : () => Promise<Utilisateur[]> = ()=>{
+    public getAll : () => Promise<Utilisateur[]> = ()=>{
 
         return new Promise((resolve,reject)=>{
 
@@ -97,7 +97,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    getById: (id: number) => Promise<Utilisateur> = (id)=>{
+    public getById: (id: number) => Promise<Utilisateur> = (id)=>{
         return new Promise((resolve,reject)=>{
 
             connexion(this.TABLE).where('id', id)
@@ -118,7 +118,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-   getByName : (pseudo: string) => Promise<Utilisateur> = (pPseudo : string)=>{
+   public getByName : (pseudo: string) => Promise<Utilisateur> = (pPseudo : string)=>{
 
         return new Promise((resolve,reject)=>{
 

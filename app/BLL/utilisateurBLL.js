@@ -43,6 +43,42 @@ class UtilisateurBLL {
                 });
             });
         };
+        this.addUser = (user) => {
+            let dao = new utilisateurDAO_1.DAOUser();
+            return new Promise((resolve, reject) => {
+                dao.insertOne(user)
+                    .then((user) => {
+                    resolve(user);
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
+            });
+        };
+        this.removeUser = (id) => {
+            let dao = new utilisateurDAO_1.DAOUser();
+            return new Promise((resolve, reject) => {
+                dao.remove(id)
+                    .then((lineRemoved) => {
+                    resolve(lineRemoved);
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
+            });
+        };
+        this.updateUser = (user) => {
+            let dao = new utilisateurDAO_1.DAOUser();
+            return new Promise((resolve, reject) => {
+                dao.update(user)
+                    .then((nbrLineChanged) => {
+                    resolve(nbrLineChanged);
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
+            });
+        };
     }
 }
 exports.UtilisateurBLL = UtilisateurBLL;

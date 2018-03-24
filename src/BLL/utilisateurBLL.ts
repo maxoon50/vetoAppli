@@ -5,7 +5,7 @@ import {Error } from '../Enums/Error';
 export class UtilisateurBLL {
 
 
-     checkLogin = (pPseudo : string, pPassword : string)=>{
+     public checkLogin = (pPseudo : string, pPassword : string)=>{
 
         let dao  = new DAOUser();
 
@@ -24,7 +24,7 @@ export class UtilisateurBLL {
     }
 
 
-     getAll : () => Promise<Utilisateur[]> = () => {
+     public getAll : () => Promise<Utilisateur[]> = () => {
 
         let dao  = new DAOUser();
 
@@ -41,7 +41,7 @@ export class UtilisateurBLL {
     }
 
 
-     getById : (id : number) => Promise<Utilisateur> = (id)=> {
+     public getById : (id : number) => Promise<Utilisateur> = (id)=> {
 
         let dao  = new DAOUser();
 
@@ -55,6 +55,51 @@ export class UtilisateurBLL {
                 })
         })
 
+    }
+
+    public addUser : (user: Utilisateur) => Promise<Utilisateur> = (user) => {
+
+        let dao  = new DAOUser();
+
+        return new Promise((resolve, reject) =>{
+            dao.insertOne(user)
+                .then((user : Utilisateur)=>{
+                    resolve(user);
+                })
+                .catch((error)=>{
+                    reject(error);
+                })
+        })
+    }
+
+    public removeUser : (id: number) => Promise<number> = (id) =>{
+
+        let dao  = new DAOUser();
+
+        return new Promise((resolve, reject) =>{
+            dao.remove(id)
+                .then((lineRemoved : number)=>{
+                    resolve(lineRemoved);
+                })
+                .catch((error)=>{
+                    reject(error);
+                })
+        })
+    }
+
+    public updateUser : (user: Utilisateur) => Promise<number> = (user) => {
+
+        let dao  = new DAOUser();
+
+        return new Promise((resolve, reject) =>{
+            dao.update(user)
+                .then((nbrLineChanged: number)=>{
+                    resolve(nbrLineChanged);
+                })
+                .catch((error)=>{
+                    reject(error);
+                })
+        })
     }
 
 }
