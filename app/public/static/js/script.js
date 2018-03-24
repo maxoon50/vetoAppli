@@ -9,7 +9,7 @@ $(document).ready(function(){
 
 
     function removeUser(url){
-
+        removeDomUser(url.substr(url.indexOf("=")+1));
         $.ajax({
             method: "GET",
             url: url,
@@ -28,7 +28,7 @@ $(document).ready(function(){
 
 
     function removeDomUser(id){
-    console.log(id);
+        $("tr[data-id='" + id + "']").fadeOut(400,);
     }
 
 
