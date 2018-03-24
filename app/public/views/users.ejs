@@ -9,20 +9,52 @@
 </head>
 <body>
 <% include ./partials/header.ejs   %>
-<div class="container main">
-    <div class="row col-12 mb-5">
-        <form action="/clients/searchByName"  method="post" id="formClient">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Chercher un client:</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom du client" name="nomClient">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
 
-    <p class="alert_unfound alert alert-warning hide">Il n'y a pas de résultat pour cette recherche.</p>
-    <div id="container_table_client">
-    </div>
+<div class="container main">
+
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Pseudo</th>
+            <th scope="col">password</th>
+            <th scope="col">role</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <% if(error){ %>
+            <div class="alert alert-danger" role="alert">
+                 Erreur : <%= error %>
+            </div>
+        <% } %>
+
+    <% if(users){ %>
+
+        <%  for (var i = 0; i<users.length; i++) {%>
+
+        <tr class="table-line" data-id="<%= users[i].id %>">
+            <th scope="row"><%= users[i].id %></th>
+            <td><%= users[i].pseudo %></td>
+            <td><%= users[i].password %></td>
+            <td><%= users[i].role %></td>
+            <td> <a href="/clients/remove?id=<%= users[i].id %>"><button class="btn btn-warning">remove</button></a></td>
+        </tr>
+
+        <% } %>
+
+    <% } %>
+        
+        </tbody>
+
+    </table>
+
+<div>
+    <button class="btn btn-primary">ajouter un user</button>
+</div>
 
 </div><!-- /.container -->
 
