@@ -41,22 +41,117 @@
             <td><%= users[i].pseudo %></td>
             <td><%= users[i].password %></td>
             <td><%= users[i].role %></td>
-            <td> <a href="/users/remove?id=<%= users[i].id %>" class="js-remove-user"><button class="btn btn-warning">remove</button></a></td>
+            <td>
+                <a href="/users/remove?id=<%= users[i].id %>" class="js-remove-user"><button class="btn btn-warning">remove</button></a>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-<%= users[i].id %>">
+                    modifier
+                </button>
+            </td>
         </tr>
+
+
+        <div class="modal fade" id="modal-<%= users[i].id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modification de l'utilisateur</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/clients/modify?id=<%= users[i].id %>" method="POST">
+                            <div class="form-group">
+                                <label for="email<%= users[i].id %>">Email address</label>
+                                <input type="email" class="form-control" id="email<%= users[i].id %>" aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password<%= users[i].id %>">Password</label>
+                                <input type="password" class="form-control" id="password<%= users[i].id %>" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <label for="select<%= users[i].id %>">Role</label>
+                                <select class="form-control" id="select<%= users[i].id %>">
+                                    <option>administrateur</option>
+                                    <option>vétérinaire</option>
+                                    <option>secrétaire</option>
+                                </select>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <% } %>
 
     <% } %>
+
+
 
         </tbody>
 
     </table>
 
 <div>
-    <button class="btn btn-primary">ajouter un user</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-user">
+        ajouter un user
+    </button>
 </div>
 
+
+
+    <div class="modal fade" id="modal-add-user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter un utilisateur</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/clients/add" method="POST">
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="selectRole">Role</label>
+                            <select class="form-control" id="selectRole>">
+                                <option>administrateur</option>
+                                <option>vétérinaire</option>
+                                <option>secrétaire</option>
+                            </select>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
 </div><!-- /.container -->
+
+
 
 <% include ./partials/script.ejs %>
 </body>

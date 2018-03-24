@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c6e4a1e-22e2-4847-be8f-ef220d5bac92" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/public/static/js/script.js" afterPath="$PROJECT_DIR$/app/public/static/js/script.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/public/views/partials/script.ejs" afterPath="$PROJECT_DIR$/app/public/views/partials/script.ejs" />
+      <change beforePath="$PROJECT_DIR$/app/public/views/users.ejs" afterPath="$PROJECT_DIR$/app/public/views/users.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,17 +44,17 @@
         <entry file="file://$PROJECT_DIR$/app/public/views/partials/script.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+              <caret line="5" column="80" lean-forward="false" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/public/static/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+            <state relative-caret-position="128">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,12 +100,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="users.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/public/views/users.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="43" column="70" lean-forward="false" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="84" />
-              <folding />
+            <state relative-caret-position="283">
+              <caret line="103" column="48" lean-forward="false" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+              <folding>
+                <element signature="e#2006#2013#1#HTML" expanded="true" />
+                <element signature="e#4519#4526#1#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,8 +147,8 @@
         <option value="$PROJECT_DIR$/src/BLL/utilisateurBLL.ts" />
         <option value="$PROJECT_DIR$/src/router/routerUsers.ts" />
         <option value="$PROJECT_DIR$/app/public/views/partials/script.ejs" />
-        <option value="$PROJECT_DIR$/app/public/views/users.ejs" />
         <option value="$PROJECT_DIR$/app/public/static/js/script.js" />
+        <option value="$PROJECT_DIR$/app/public/views/users.ejs" />
       </list>
     </option>
   </component>
@@ -325,12 +330,12 @@
       <updated>1521653524673</updated>
       <workItem from="1521653526182" duration="6757000" />
       <workItem from="1521755124076" duration="2162000" />
-      <workItem from="1521909517187" duration="8134000" />
+      <workItem from="1521909517187" duration="9852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17053000" />
+    <option name="totallyTimeSpent" value="18771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="107" y="0" width="1778" height="1075" extended-state="0" />
@@ -540,14 +545,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/views/partials/script.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="44" lean-forward="true" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/public/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -572,19 +569,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/views/users.ejs">
+    <entry file="file://$PROJECT_DIR$/app/public/views/partials/script.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="43" column="70" lean-forward="false" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="84" />
+        <state relative-caret-position="80">
+          <caret line="5" column="80" lean-forward="false" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/static/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        <state relative-caret-position="128">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/views/users.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="103" column="48" lean-forward="false" selection-start-line="103" selection-start-column="48" selection-end-line="103" selection-end-column="48" />
+          <folding>
+            <element signature="e#2006#2013#1#HTML" expanded="true" />
+            <element signature="e#4519#4526#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
