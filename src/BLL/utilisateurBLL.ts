@@ -1,13 +1,11 @@
 import {Utilisateur} from "../BO/utilisateur";
-
-let Dao = require('../DAL/utilisateurDAO');
 import {DAOUser} from '../DAL/utilisateurDAO';
 import {Error } from '../Enums/Error';
 
 export class UtilisateurBLL {
 
 
-    static checkLogin = (pPseudo : string, pPassword : string)=>{
+     checkLogin = (pPseudo : string, pPassword : string)=>{
 
         let dao  = new DAOUser();
 
@@ -26,7 +24,7 @@ export class UtilisateurBLL {
     }
 
 
-    static getAll : () => Promise<Utilisateur[]> = () => {
+     getAll : () => Promise<Utilisateur[]> = () => {
 
         let dao  = new DAOUser();
 
@@ -43,7 +41,7 @@ export class UtilisateurBLL {
     }
 
 
-    static getById : (id : number) => Promise<Utilisateur> = (id)=> {
+     getById : (id : number) => Promise<Utilisateur> = (id)=> {
 
         let dao  = new DAOUser();
 

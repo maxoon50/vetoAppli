@@ -16,7 +16,8 @@ routerLogin.route('/login')
     res.render("login.ejs", { user: false });
 })
     .post((req, res) => {
-    utilisateurBLL_1.UtilisateurBLL.checkLogin(req.body.pseudo, req.body.password)
+    let userManager = new utilisateurBLL_1.UtilisateurBLL();
+    userManager.checkLogin(req.body.pseudo, req.body.password)
         .then((response) => {
         req.session.user = response;
         res.redirect('/home');
@@ -27,7 +28,7 @@ routerLogin.route('/login')
             nom: req.body.nom,
             password: req.body.password,
         };
-        res.render("login.ejs", { user: user, error: "Erreur login / mot de passe incorrect(s)" });
+        res.render("login.ejs", { user: user, error: typeError });
     });
 });
 routerLogin.get('/logout', (req, res) => {
