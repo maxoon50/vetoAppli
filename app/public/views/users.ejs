@@ -41,13 +41,13 @@
             <td><%= users[i].pseudo %></td>
             <td><%= users[i].password %></td>
             <td><%= users[i].role %></td>
-            <td> <a href="/clients/remove?id=<%= users[i].id %>"><button class="btn btn-warning">remove</button></a></td>
+            <td> <a href="/users/remove?id=<%= users[i].id %>"><button class="btn btn-warning">remove</button></a></td>
         </tr>
 
         <% } %>
 
     <% } %>
-        
+
         </tbody>
 
     </table>

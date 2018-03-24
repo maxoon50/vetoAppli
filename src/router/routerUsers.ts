@@ -17,7 +17,20 @@ routerHome.get('/', (req, res)=>{
             res.render("users.ejs", { users: null, error: err});
         })
     ;
+});
 
+routerHome.get('/remove', (req, res)=>{
+    let userManager = new UtilisateurBLL();
+    let id : number = req.query.id;
+    res.setHeader('Content-Type', 'application/json');
+
+    userManager.removeUser(id)
+        .then((resp)=>{
+            res.send(JSON.stringify({error: null}));
+        })
+        .catch((err)=>{
+            res.send(JSON.stringify({error: err}))
+        })
 
 });
 

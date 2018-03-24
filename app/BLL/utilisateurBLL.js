@@ -60,7 +60,10 @@ class UtilisateurBLL {
             return new Promise((resolve, reject) => {
                 dao.remove(id)
                     .then((lineRemoved) => {
-                    resolve(lineRemoved);
+                    if (lineRemoved == 1) {
+                        resolve(lineRemoved);
+                    }
+                    reject("erreur lors de la suppression du user");
                 })
                     .catch((error) => {
                     reject(error);
