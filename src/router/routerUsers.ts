@@ -34,6 +34,20 @@ routerHome.get('/remove', (req, res)=>{
 
 });
 
+routerHome.post('/modify', (req, res) => {
+    let userManager = new UtilisateurBLL();
+
+    userManager.updateUser(req)
+        .then((response)=>{
+            // a voir pour la suite--------------------------
+        console.log(response);
+        })
+        .catch((err)=>{
+        console.log(err);
+        })
+
+})
+
 
 
 export = routerHome;

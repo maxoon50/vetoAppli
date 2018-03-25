@@ -23,7 +23,7 @@ $(document).ready(function(){
         let pseudo = $(containerData).attr('data-pseudo');
         let password = $(containerData).attr('data-password');
         let role = $(containerData).attr('data-role');
-        $("#email"+userId).val(pseudo);
+        $("#pseudo"+userId).val(pseudo);
         $("#password"+userId).val(password);
         $("#role"+userId).val(role);
     }

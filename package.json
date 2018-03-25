@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/maxoon50/vetoAppli#readme",
   "dependencies": {
+    "@types/request": "^2.47.0",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",

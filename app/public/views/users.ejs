@@ -60,18 +60,19 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/clients/modify?id=<%= users[i].id %>" method="POST">
+                        <form action="/users/modify" method="POST">
                             <div class="form-group">
-                                <label for="email<%= users[i].id %>">Email address</label>
-                                <input type="email" class="form-control" id="email<%= users[i].id %>" aria-describedby="emailHelp" placeholder="Enter email">
+                                <label for="pseudo<%= users[i].id %>">Pseudo</label>
+                                <input name="pseudo" type="text" class="form-control" id="pseudo<%= users[i].id %>" aria-describedby="pseudoHelp" placeholder="Enter pseudo">
+                                <input type="hidden" name="id" value="<%= users[i].id %>"/>
                             </div>
                             <div class="form-group">
                                 <label for="password<%= users[i].id %>">Password</label>
-                                <input type="password" class="form-control" id="password<%= users[i].id %>" placeholder="Password">
+                                <input name="password" type="password" class="form-control" id="password<%= users[i].id %>" placeholder="Password">
                             </div>
                             <div class="form-group">
                                 <label for="select<%= users[i].id %>">Role</label>
-                                <select class="form-control" id="role<%= users[i].id %>">
+                                <select class="form-control" id="role<%= users[i].id %>" name="role">
                                     <option value="ADM">administrateur</option>
                                     <option value="VET">vétérinaire</option>
                                     <option value="SEC">secrétaire</option>

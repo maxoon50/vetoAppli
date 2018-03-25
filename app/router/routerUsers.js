@@ -26,5 +26,15 @@ routerHome.get('/remove', (req, res) => {
         res.send(JSON.stringify({ error: err }));
     });
 });
+routerHome.post('/modify', (req, res) => {
+    let userManager = new utilisateurBLL_1.UtilisateurBLL();
+    userManager.updateUser(req)
+        .then((response) => {
+        console.log(response);
+    })
+        .catch((err) => {
+        console.log(err);
+    });
+});
 module.exports = routerHome;
 //# sourceMappingURL=routerUsers.js.map

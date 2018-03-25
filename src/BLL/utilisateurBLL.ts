@@ -2,6 +2,7 @@ import {Utilisateur} from "../BO/utilisateur";
 import {DAOUser} from '../DAL/utilisateurDAO';
 import {Error } from '../Enums/Error';
 
+
 export class UtilisateurBLL {
 
 
@@ -57,19 +58,27 @@ export class UtilisateurBLL {
 
     }
 
-    public addUser : (user: Utilisateur) => Promise<Utilisateur> = (user) => {
+    public addUser : (req ) => Promise<Utilisateur> = (req) => {
 
         let dao  = new DAOUser();
 
         return new Promise((resolve, reject) =>{
-            dao.insertOne(user)
-                .then((user : Utilisateur)=>{
-                    resolve(user);
-                })
-                .catch((error)=>{
-                    reject(error);
-                })
+
+            if(this.validateUser(req)){
+
+                let user : Utilisateur = new Utilisateur(req.body.pseudo,req.body.password, req.body.role, req.body.id);
+                dao.insertOne(user)
+                    .then((user : Utilisateur)=>{
+                        resolve(user);
+                    })
+                    .catch((error)=>{
+                        reject(error);
+                    })
+            }else{
+                reject("erreur, merci de vérifier que les champs renseigné soient corrects");
+            }
         })
+
     }
 
     public removeUser : (id: number) => Promise<number> = (id) =>{
@@ -90,19 +99,45 @@ export class UtilisateurBLL {
         })
     }
 
-    public updateUser : (user: Utilisateur) => Promise<number> = (user) => {
+    public updateUser : (req) => Promise<number> = (req) => {
 
         let dao  = new DAOUser();
 
         return new Promise((resolve, reject) =>{
-            dao.update(user)
-                .then((nbrLineChanged: number)=>{
-                    resolve(nbrLineChanged);
-                })
-                .catch((error)=>{
-                    reject(error);
-                })
+
+            if(this.validateUser(req)) {
+
+                let user: Utilisateur = new Utilisateur(req.body.pseudo, req.body.password, req.body.role, req.body.id);
+
+                dao.update(user)
+                    .then((nbrLineChanged: number) => {
+                        resolve(nbrLineChanged);
+                    })
+                    .catch((error) => {
+                        reject(error);
+                    })
+            }else{
+                reject("erreur, merci de vérifier que les champs renseignés soient corrects");
+            }
         })
+
+    }
+
+    private validateUser : (req) => boolean = (req) =>{
+
+         try{
+             if(req.body.pseudo != null && req.body.pseudo.length > 2
+                 && req.body.password != null && req.body.password.length > 2
+                 && req.body.role != null && req.body.role.length == 3
+                 && req.body.id != null && !isNaN(parseInt(req.body.id))
+             ){
+                 return true;
+             }
+         }catch(e){
+             return false;
+         }
+
+         return false;
     }
 
 }
