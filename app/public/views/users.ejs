@@ -36,7 +36,7 @@
 
         <%  for (var i = 0; i<users.length; i++) {%>
 
-        <tr class="table-line" data-id="<%= users[i].id %>">
+        <tr class="table-line" data-id="<%= users[i].id %>" data-pseudo="<%= users[i].pseudo %>" data-password="<%= users[i].password %>" data-role="<%= users[i].role %>">
             <th scope="row"><%= users[i].id %></th>
             <td><%= users[i].pseudo %></td>
             <td><%= users[i].password %></td>
@@ -71,10 +71,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="select<%= users[i].id %>">Role</label>
-                                <select class="form-control" id="select<%= users[i].id %>">
-                                    <option>administrateur</option>
-                                    <option>vétérinaire</option>
-                                    <option>secrétaire</option>
+                                <select class="form-control" id="role<%= users[i].id %>">
+                                    <option value="ADM">administrateur</option>
+                                    <option value="VET">vétérinaire</option>
+                                    <option value="SEC">secrétaire</option>
                                 </select>
                             </div>
 
