@@ -38,5 +38,18 @@ routerHome.post('/modify', (req, res) => {
         res.send(JSON.stringify({ error: err }));
     });
 });
+routerHome.post('/add', (req, res) => {
+    let userManager = new utilisateurBLL_1.UtilisateurBLL();
+    userManager.addUser(req)
+        .then((response) => {
+        res.send({
+            user: response,
+            error: null
+        });
+    })
+        .catch((err) => {
+        res.send(JSON.stringify({ error: err }));
+    });
+});
 module.exports = routerHome;
 //# sourceMappingURL=routerUsers.js.map

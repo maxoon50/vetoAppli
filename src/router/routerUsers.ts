@@ -38,6 +38,7 @@ routerHome.get('/remove', (req, res)=>{
 routerHome.post('/modify', (req, res) => {
 
     let userManager = new UtilisateurBLL();
+
     res.setHeader('Content-Type', 'application/json');
 
     userManager.updateUser(req)
@@ -49,6 +50,22 @@ routerHome.post('/modify', (req, res) => {
             res.send(JSON.stringify({error : err}));
         })
 
+})
+
+routerHome.post('/add', (req, res) => {
+
+    let userManager = new UtilisateurBLL();
+
+    userManager.addUser(req)
+        .then((response: Utilisateur)=>{
+            res.send({
+                user: response,
+                error: null
+            });
+        })
+        .catch((err)=>{
+            res.send(JSON.stringify({error : err}));
+        })
 })
 
 

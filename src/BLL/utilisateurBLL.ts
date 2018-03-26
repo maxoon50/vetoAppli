@@ -66,7 +66,7 @@ export class UtilisateurBLL {
 
             if(this.validateUser(req)){
 
-                let user : Utilisateur = new Utilisateur(req.body.pseudo,req.body.password, req.body.role, req.body.id);
+                let user : Utilisateur = new Utilisateur(req.body.pseudo,req.body.password, req.body.role);
                 dao.insertOne(user)
                     .then((user : Utilisateur)=>{
                         resolve(user);
@@ -105,7 +105,7 @@ export class UtilisateurBLL {
 
         return new Promise((resolve, reject) =>{
 
-            if(this.validateUser(req)) {
+            if(this.validateUserWithId(req)) {
 
                 let user: Utilisateur = new Utilisateur(req.body.pseudo, req.body.password, req.body.role, req.body.id);
 
@@ -126,7 +126,7 @@ export class UtilisateurBLL {
 
     }
 
-    private validateUser : (req) => boolean = (req) =>{
+    private validateUserWithId : (req) => boolean = (req) =>{
 
          try{
              if(req.body.pseudo != null && req.body.pseudo.length > 2
@@ -141,6 +141,22 @@ export class UtilisateurBLL {
          }
 
          return false;
+    }
+
+    private validateUser : (req) => boolean = (req) =>{
+
+        try{
+            if(req.body.pseudo != null && req.body.pseudo.length > 2
+                && req.body.password != null && req.body.password.length > 2
+                && req.body.role != null && req.body.role.length == 3
+            ){
+                return true;
+            }
+        }catch(e){
+            return false;
+        }
+
+        return false;
     }
 
 }

@@ -119,21 +119,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/clients/add" method="POST">
+                    <form action="/users/add" method="POST" id="js-form-add-user">
                         <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <label for="pseudo">Pseudo</label>
+                            <input name="pseudo" type="text" class="form-control" id="pseudo" aria-describedby="pseudoHelp" placeholder="Enter pseudo">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <label for="selectRole">Role</label>
-                            <select class="form-control" id="selectRole>">
-                                <option>administrateur</option>
-                                <option>vétérinaire</option>
-                                <option>secrétaire</option>
+                            <label for="role">Role</label>
+                            <select name="role" class="form-control" id="role>">
+                                <option value="ADM">administrateur</option>
+                                <option value="VET">vétérinaire</option>
+                                <option value="SEC">secrétaire</option>
                             </select>
                         </div>
 

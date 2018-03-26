@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
+    const USERS_URL_REDIRECT = "http://localhost:3000/users/";
 
+    
     ////////----------------EVENTS----------------------////////
 
     $(document).on("click",'.js-remove-user', function(e){
@@ -18,19 +20,35 @@ $(document).ready(function(){
         updateUser($(this), $(this).attr("action"));
     })
 
+    $(document).on('submit', '#js-form-add-user', function(e){
+        e.preventDefault();
+        addUser($(this), $(this).attr("action"));
+    })
+
 
     ////////----------------END EVENTS----------------------////////
 
 
-    function fillModalWithData($this){
-        let userId = $($this).attr('id').substr($($this).attr('id').indexOf("-")+1);
-        let containerData = $("tr[data-id='" + userId + "']");
-        let pseudo = $(containerData).attr('data-pseudo');
-        let password = $(containerData).attr('data-password');
-        let role = $(containerData).attr('data-role');
-        $("#pseudo"+userId).val(pseudo);
-        $("#password"+userId).val(password);
-        $("#role"+userId).val(role);
+    ////////----------------AJAX REQUESTS----------------------////////
+
+
+    function addUser(form,url){
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: $(form).serialize(),
+            datatype: 'json'
+        })
+            .done(function( msg ) {
+                if(msg.error == null){
+                    window.location.href = USERS_URL_REDIRECT;
+                }else{
+                    alert("une erreur s'est produite, merci de contacter l'administrateur");
+                }
+            })
+            .fail(function(err){
+                alert("une erreur s'est produite, merci de contacter l'administrateur");
+            })
     }
 
     function updateUser(form,url){
@@ -68,6 +86,22 @@ $(document).ready(function(){
             .fail(function(err){
                 alert("erreur, merci de contacter l'administrateur");
             })
+    }
+
+    ////////----------------END AJAX REQUESTS----------------------////////
+
+
+
+
+    function fillModalWithData($this){
+        let userId = $($this).attr('id').substr($($this).attr('id').indexOf("-")+1);
+        let containerData = $("tr[data-id='" + userId + "']");
+        let pseudo = $(containerData).attr('data-pseudo');
+        let password = $(containerData).attr('data-password');
+        let role = $(containerData).attr('data-role');
+        $("#pseudo"+userId).val(pseudo);
+        $("#password"+userId).val(password);
+        $("#role"+userId).val(role);
     }
 
 

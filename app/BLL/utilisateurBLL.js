@@ -48,7 +48,7 @@ class UtilisateurBLL {
             let dao = new utilisateurDAO_1.DAOUser();
             return new Promise((resolve, reject) => {
                 if (this.validateUser(req)) {
-                    let user = new utilisateur_1.Utilisateur(req.body.pseudo, req.body.password, req.body.role, req.body.id);
+                    let user = new utilisateur_1.Utilisateur(req.body.pseudo, req.body.password, req.body.role);
                     dao.insertOne(user)
                         .then((user) => {
                         resolve(user);
@@ -80,7 +80,7 @@ class UtilisateurBLL {
         this.updateUser = (req) => {
             let dao = new utilisateurDAO_1.DAOUser();
             return new Promise((resolve, reject) => {
-                if (this.validateUser(req)) {
+                if (this.validateUserWithId(req)) {
                     let user = new utilisateur_1.Utilisateur(req.body.pseudo, req.body.password, req.body.role, req.body.id);
                     dao.update(user)
                         .then((nbrLineChanged) => {
@@ -98,12 +98,25 @@ class UtilisateurBLL {
                 }
             });
         };
-        this.validateUser = (req) => {
+        this.validateUserWithId = (req) => {
             try {
                 if (req.body.pseudo != null && req.body.pseudo.length > 2
                     && req.body.password != null && req.body.password.length > 2
                     && req.body.role != null && req.body.role.length == 3
                     && req.body.id != null && !isNaN(parseInt(req.body.id))) {
+                    return true;
+                }
+            }
+            catch (e) {
+                return false;
+            }
+            return false;
+        };
+        this.validateUser = (req) => {
+            try {
+                if (req.body.pseudo != null && req.body.pseudo.length > 2
+                    && req.body.password != null && req.body.password.length > 2
+                    && req.body.role != null && req.body.role.length == 3) {
                     return true;
                 }
             }
