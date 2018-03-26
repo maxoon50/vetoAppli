@@ -13,6 +13,11 @@ $(document).ready(function(){
         fillModalWithData($(this));
     })
 
+    $(document).on('submit', '.js-form-modify-user', function(e){
+        e.preventDefault();
+        updateUser($(this), $(this).attr("action"));
+    })
+
 
     ////////----------------END EVENTS----------------------////////
 
@@ -28,16 +33,34 @@ $(document).ready(function(){
         $("#role"+userId).val(role);
     }
 
+    function updateUser(form,url){
+        $.ajax({
+            method: "POST",
+            url: url,
+            data: $(form).serialize(),
+            datatype: 'json'
+        })
+            .done(function( msg ) {
+                if(msg.error == null){
+                    updateDomUser(msg.user);
+                }else{
+                    alert("une erreur s'est produite, merci de contacter l'administrateur");
+                }
+            })
+            .fail(function(err){
+                alert("une erreur s'est produite, merci de contacter l'administrateur");
+            })
+    }
+
 
     function removeUser(url){
-        removeDomUser(url.substr(url.indexOf("=")+1));
         $.ajax({
             method: "GET",
             url: url,
         })
             .done(function( msg ) {
                 if(msg.error == null){
-                     removeDomUser(url.substr(url.indexOf("="+1)));
+                     removeDomUser(url.substr(url.indexOf("=")+1));
                 }else{
                      alert(msg.error);
                 }
@@ -52,6 +75,15 @@ $(document).ready(function(){
         $("tr[data-id='" + id + "']").fadeOut(400,);
     }
 
+    function updateDomUser(user){
+        $("#js-user-pseudo-"+user.id).text(user.pseudo);
+        $("#js-user-password-"+user.id).text(user.password);
+        $("#js-user-role-"+user.id).text(user.role);
+        $("#modal-"+user.id).modal('hide');
+        $('.table-line').attr("data-pseudo", user.pseudo);
+        $('.table-line').attr("data-password", user.password);
+        $('.table-line').attr("data-role", user.role);
+    }
 
 
 });

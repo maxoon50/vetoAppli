@@ -99,7 +99,7 @@ export class UtilisateurBLL {
         })
     }
 
-    public updateUser : (req) => Promise<number> = (req) => {
+    public updateUser : (req) => Promise<object> = (req) => {
 
         let dao  = new DAOUser();
 
@@ -111,7 +111,10 @@ export class UtilisateurBLL {
 
                 dao.update(user)
                     .then((nbrLineChanged: number) => {
-                        resolve(nbrLineChanged);
+                        resolve({
+                            nbrLineChanged,
+                            user
+                        });
                     })
                     .catch((error) => {
                         reject(error);

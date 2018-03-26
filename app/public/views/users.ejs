@@ -38,9 +38,9 @@
 
         <tr class="table-line" data-id="<%= users[i].id %>" data-pseudo="<%= users[i].pseudo %>" data-password="<%= users[i].password %>" data-role="<%= users[i].role %>">
             <th scope="row"><%= users[i].id %></th>
-            <td><%= users[i].pseudo %></td>
-            <td><%= users[i].password %></td>
-            <td><%= users[i].role %></td>
+            <td id="js-user-pseudo-<%= users[i].id %>"><%= users[i].pseudo %></td>
+            <td id="js-user-password-<%= users[i].id %>"><%= users[i].password %></td>
+            <td id="js-user-role-<%= users[i].id %>"><%= users[i].role %></td>
             <td>
                 <a href="/users/remove?id=<%= users[i].id %>" class="js-remove-user"><button class="btn btn-warning">remove</button></a>
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-<%= users[i].id %>">
@@ -60,7 +60,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="/users/modify" method="POST">
+                        <form action="/users/modify" method="POST" class="js-form-modify-user">
                             <div class="form-group">
                                 <label for="pseudo<%= users[i].id %>">Pseudo</label>
                                 <input name="pseudo" type="text" class="form-control" id="pseudo<%= users[i].id %>" aria-describedby="pseudoHelp" placeholder="Enter pseudo">

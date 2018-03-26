@@ -84,7 +84,10 @@ class UtilisateurBLL {
                     let user = new utilisateur_1.Utilisateur(req.body.pseudo, req.body.password, req.body.role, req.body.id);
                     dao.update(user)
                         .then((nbrLineChanged) => {
-                        resolve(nbrLineChanged);
+                        resolve({
+                            nbrLineChanged,
+                            user
+                        });
                     })
                         .catch((error) => {
                         reject(error);

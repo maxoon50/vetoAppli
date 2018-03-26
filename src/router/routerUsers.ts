@@ -34,16 +34,19 @@ routerHome.get('/remove', (req, res)=>{
 
 });
 
+// méthode appelée en ajax uniquement
 routerHome.post('/modify', (req, res) => {
+
     let userManager = new UtilisateurBLL();
+    res.setHeader('Content-Type', 'application/json');
 
     userManager.updateUser(req)
         .then((response)=>{
-            // a voir pour la suite--------------------------
-        console.log(response);
+            response['error'] = null;
+            res.send(JSON.stringify(response));
         })
         .catch((err)=>{
-        console.log(err);
+            res.send(JSON.stringify({error : err}));
         })
 
 })
