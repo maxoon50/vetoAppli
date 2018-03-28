@@ -1,6 +1,7 @@
 import { Client } from "../BO/Client";
 import {ClientDAO} from "../DAL/clientDAO";
-
+import { BusinessError } from "../Errors/BusinessError";
+import {MyError} from "../Errors/MyError";
 
 export class ClientBLL {
 
@@ -46,15 +47,21 @@ export class ClientBLL {
 
         return new Promise((resolve, reject) =>{
 
-                let user : Client = new Client(req.body.nom,req.body.prenom, req.body.email);
+            let errors = new BusinessError();
+            this.validateClient(req, errors);
+
+            if(errors.getErreurs().length > 0){
+                reject({error: errors.getErreurs()});
+            }else {
+                let user: Client = new Client(req.body.nom, req.body.prenom, req.body.email);
                 dao.insertOne(user)
-                    .then((client : Client)=>{
+                    .then((client: Client) => {
                         resolve(user);
                     })
-                    .catch((error)=>{
+                    .catch((error) => {
                         reject(error);
                     })
-
+            }
         })
 
     }
@@ -83,23 +90,63 @@ export class ClientBLL {
 
         return new Promise((resolve, reject) =>{
 
-                let client: Client = new Client(req.body.nom, req.body.prenom, req.body.email, req.body.id);
+                let errors = new BusinessError();
+                this.validateClientWithID(req, errors);
 
-                dao.update(client)
-                    .then((nbrLineChanged: number) => {
-                        resolve({
-                            nbrLineChanged,
-                            client
-                        });
-                    })
-                    .catch((error) => {
-                        reject(error);
-                    })
+                if(errors.getErreurs().length > 0){
+                    reject({error: errors.getErreurs()});
+                }else{
+                    let client: Client = new Client(req.body.nom, req.body.prenom, req.body.email, req.body.id);
 
+                    dao.update(client)
+                        .then((nbrLineChanged: number) => {
+                            resolve({
+                                nbrLineChanged,
+                                client
+                            });
+                        })
+                        .catch((error) => {
+                            reject(error);
+                        })
+                }
         })
 
     }
 
+
+    private validateClientWithID : (req, errors: BusinessError) => void = (req, errors) =>{
+
+    if(req.body.nom == null ||req.body.nom.length < 3 ){
+            errors.addErreur(MyError.CONSTR_CLIENT_NOM);
+    }
+    if(req.body.prenom == null ||req.body.prenom.length < 3 ){
+            errors.addErreur(MyError.CONSTR_CLIENT_PRENOM);
+    }
+    if(req.body.email == null ||!this.validateEmail(req.body.email) ){
+            errors.addErreur(MyError.CONSTR_CLIENT_EMAIL);
+    }
+    if(req.body.id == null || !(req.body.id === parseInt(req.body.id, 10))){
+            errors.addErreur(MyError.CONSTR_CLIENT_ID);
+    }
+    }
+
+    private validateClient: (req, errors: BusinessError) => void = (req, errors) =>{
+
+        if(req.body.nom == null ||req.body.nom.length < 3 ){
+            errors.addErreur(MyError.CONSTR_CLIENT_NOM);
+        }
+        if(req.body.prenom == null ||req.body.prenom.length < 3 ){
+            errors.addErreur(MyError.CONSTR_CLIENT_PRENOM);
+        }
+        if(req.body.email == null ||!this.validateEmail(req.body.email) ){
+            errors.addErreur(MyError.CONSTR_CLIENT_EMAIL);
+        }
+    }
+
+    private validateEmail : (email: string) => boolean = (email) => {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
 
 
 
