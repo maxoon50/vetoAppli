@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     const USERS_URL_REDIRECT = "http://localhost:3000/users/";
 
-    
+
     ////////----------------EVENTS----------------------////////
 
     $(document).on("click",'.js-remove-user', function(e){

@@ -1,31 +1,33 @@
+import {Error} from "../Enums/Error";
+
 let connexion = require('./knexImpl');
 
-import {Utilisateur} from '../BO/utilisateur';
+
+import { Client } from '../BO/client';
 import {DALInterface} from '../interfaces/IDALInterface';
-import {Error } from '../Enums/Error';
 
 
-export class  DAOUser implements DALInterface <Utilisateur>{
+export class ClientDAO implements DALInterface<Client>{
 
-    TABLE: string = "utilisateur";
+    TABLE: string = "clients";
 
-    constructor(){
+    constructor(){}
 
-    }
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    public insertOne : (user: Utilisateur) => Promise<Utilisateur> = (user)=>{
+
+    public insertOne : (client: Client) => Promise<Client> = (client)=>{
 
         return new Promise((resolve, reject)=>{
             connexion(this.TABLE)
                 .insert({
-                    pseudo: user.pseudo,
-                    password: user.password,
-                    utilisateur_role: user.role
+                    nom: client.nom,
+                    prenom: client.prenom,
+                    email: client.email
                 })
                 .returning('id')
                 .then((id)=>{
-                    resolve(new Utilisateur(user.pseudo, user.password, user.role, id));
+                    resolve(new Client(client.nom, client.prenom, client.email, id));
                 })
                 .catch((err)=>{
                     reject(err);
@@ -36,6 +38,7 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
+
     public remove : (id: number) => Promise<number> = (id)=>{
 
         return new Promise((resolve, reject)=>{
@@ -53,51 +56,52 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    public update : (user: Utilisateur) => Promise<number> = (user)=>{
+    public update : (client: Client) => Promise<number> = (client)=>{
 
         return new Promise((resolve, reject)=>{
             connexion(this.TABLE)
-                .where('id', user.id)
+                .where('id', client.id)
                 .update({
-                    pseudo: user.pseudo,
-                    password: user.password,
-                    utilisateur_role: user.role
+                    nom: client.nom,
+                    prenom: client.prenom,
+                    email: client.email
                 }).then((nbrLineUpdated)=>{
                     resolve(nbrLineUpdated);
                 }).catch((err)=>{
                     reject(err);
-                })
+            })
         })
 
     }
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    public getAll : () => Promise<Utilisateur[]> = ()=>{
+
+    public getAll : () => Promise<Client[]> = ()=>{
 
         return new Promise((resolve,reject)=>{
 
             connexion(this.TABLE)
 
                 .then((result)=>{
-                    var retArr : Utilisateur[] = [];
+                    var retArr : Client[] = [];
                     if(result.length){
                         for(var i = 0; i<result.length; i++){
-                            retArr.push(new Utilisateur(result[i].pseudo, result[i].password, result[i].utilisateur_role, result[i].id ));
+                            retArr.push(new Client(result[i].nom, result[i].prenom, result[i].email, result[i].id ));
                         }
-
                     }
                     resolve(retArr);
                 })
                 .catch((error)=>{
-                reject(error);
-            })
+                    reject(error);
+                })
         })
     }
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-    public getById: (id: number) => Promise<Utilisateur> = (id)=>{
+
+    public getById: (id: number) => Promise<Client> = (id)=>{
         return new Promise((resolve,reject)=>{
 
             connexion(this.TABLE).where('id', id)
@@ -105,8 +109,8 @@ export class  DAOUser implements DALInterface <Utilisateur>{
                 .then((result)=>{
                     if(result.length){
                         let r = result[0];
-                        let user = new Utilisateur(r.pseudo, r.password, r .utilisateur_role,r.id );
-                        resolve(user);
+                        let client = new Client(r.nom, r.prenom, r .email,r.id );
+                        resolve(client);
                     }
                     reject({error : Error.NotFound})}
 
@@ -118,30 +122,27 @@ export class  DAOUser implements DALInterface <Utilisateur>{
 
 
     ///////////////////////////////////////////////////////////////////////////////////////
-   public getByName : (pseudo: string) => Promise<Utilisateur> = (pPseudo : string)=>{
+
+    public getByName : (nom: string) => Promise<Client> = (nom : string)=>{
 
         return new Promise((resolve,reject)=>{
 
-            connexion(this.TABLE).where('pseudo', pPseudo)
+            connexion(this.TABLE).where('nom', nom)
 
                 .then((result)=>{
-              if(result.length){
-                let r = result[0];
-                let user = new Utilisateur(r.pseudo, r.password, r.utilisateur_role,r.id );
-                resolve(user);
-              }
-                reject({error : Error.NotFound})}
+                    if(result.length){
+                        let r = result[0];
+                        let client = new Client(r.nom, r.prenom, r.email ,r.id );
+                        resolve(client);
+                    }
+                    reject({error : Error.NotFound})}
 
                 ).catch((error)=>{
                 reject(error);
-              })
+            })
         })
-      
+
     }
 
-};
 
-
-
-
-
+}

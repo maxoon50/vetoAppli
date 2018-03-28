@@ -126,6 +126,8 @@ export class UtilisateurBLL {
 
     }
 
+    ///////////////////////////////////UTILS////////////////////////////////////////////////
+
     private validateUserWithId : (req) => boolean = (req) =>{
 
          try{
