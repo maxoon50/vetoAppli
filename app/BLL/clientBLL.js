@@ -30,6 +30,18 @@ class ClientBLL {
                 });
             });
         };
+        this.getByName = (name) => {
+            let dao = new clientDAO_1.ClientDAO();
+            return new Promise((resolve, reject) => {
+                dao.getByName(name)
+                    .then((client) => {
+                    resolve(client);
+                })
+                    .catch((error) => {
+                    reject(error);
+                });
+            });
+        };
         this.addClient = (req) => {
             let dao = new clientDAO_1.ClientDAO();
             return new Promise((resolve, reject) => {

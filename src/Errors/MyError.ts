@@ -13,6 +13,7 @@ export class MyError {
 
     ///////////////////////////// CONTRAINTES METIER ///////////////////////////////
 
+
     public static CONSTR_CLIENT_NOM = "le nom renseigné doit comporter au minimum 2 caractères";
 
     public static CONSTR_CLIENT_PRENOM = "le prénom renseigné doit comporter au minimum 2 caractères";
@@ -21,6 +22,7 @@ export class MyError {
 
     public static CONSTR_CLIENT_ID = "l'id renseigné est incorrect";
 
+    public static CLIENT_NOT_FOUND = "ce client n'existe pas";
 
 
 

@@ -10,5 +10,6 @@ MyError.CONSTR_CLIENT_NOM = "le nom renseigné doit comporter au minimum 2 carac
 MyError.CONSTR_CLIENT_PRENOM = "le prénom renseigné doit comporter au minimum 2 caractères";
 MyError.CONSTR_CLIENT_EMAIL = "merci de renseigner un email correct";
 MyError.CONSTR_CLIENT_ID = "l'id renseigné est incorrect";
+MyError.CLIENT_NOT_FOUND = "ce client n'existe pas";
 exports.MyError = MyError;
 //# sourceMappingURL=MyError.js.map

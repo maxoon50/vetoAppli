@@ -5,6 +5,7 @@ let connexion = require('./knexImpl');
 
 import { Client } from '../BO/client';
 import {DALInterface} from '../interfaces/IDALInterface';
+import { MyError } from "../Errors/MyError";
 
 
 export class ClientDAO implements DALInterface<Client>{
@@ -112,9 +113,9 @@ export class ClientDAO implements DALInterface<Client>{
                         let client = new Client(r.nom, r.prenom, r .email,r.id );
                         resolve(client);
                     }
-                    reject({error : Error.NotFound})}
-
-                ).catch((error)=>{
+                    reject({error : MyError.CLIENT_NOT_FOUND})
+                })
+                .catch((error)=>{
                 reject(error);
             })
         })
@@ -132,12 +133,12 @@ export class ClientDAO implements DALInterface<Client>{
                 .then((result)=>{
                     if(result.length){
                         let r = result[0];
-                        let client = new Client(r.nom, r.prenom, r.email ,r.id );
+                        let client = new Client(r.nom, r.prenom, r.email ,r.id_client );
                         resolve(client);
                     }
-                    reject({error : Error.NotFound})}
-
-                ).catch((error)=>{
+                    reject({error : MyError.CLIENT_NOT_FOUND});
+                })
+                .catch((error)=>{
                 reject(error);
             })
         })

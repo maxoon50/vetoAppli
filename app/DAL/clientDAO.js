@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Error_1 = require("../Enums/Error");
 let connexion = require('./knexImpl');
 const client_1 = require("../BO/client");
+const MyError_1 = require("../Errors/MyError");
 class ClientDAO {
     constructor() {
         this.TABLE = "clients";
@@ -77,8 +77,9 @@ class ClientDAO {
                         let client = new client_1.Client(r.nom, r.prenom, r.email, r.id);
                         resolve(client);
                     }
-                    reject({ error: Error_1.Error.NotFound });
-                }).catch((error) => {
+                    reject({ error: MyError_1.MyError.CLIENT_NOT_FOUND });
+                })
+                    .catch((error) => {
                     reject(error);
                 });
             });
@@ -89,11 +90,12 @@ class ClientDAO {
                     .then((result) => {
                     if (result.length) {
                         let r = result[0];
-                        let client = new client_1.Client(r.nom, r.prenom, r.email, r.id);
+                        let client = new client_1.Client(r.nom, r.prenom, r.email, r.id_client);
                         resolve(client);
                     }
-                    reject({ error: Error_1.Error.NotFound });
-                }).catch((error) => {
+                    reject({ error: MyError_1.MyError.CLIENT_NOT_FOUND });
+                })
+                    .catch((error) => {
                     reject(error);
                 });
             });
