@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const utilisateur_1 = require("../BO/utilisateur");
 const utilisateurDAO_1 = require("../DAL/utilisateurDAO");
 const Error_1 = require("../Enums/Error");
+const MyError_1 = require("../Errors/MyError");
 class UtilisateurBLL {
     constructor() {
         this.checkLogin = (pPseudo, pPassword) => {
@@ -70,7 +71,7 @@ class UtilisateurBLL {
                     if (lineRemoved == 1) {
                         resolve(lineRemoved);
                     }
-                    reject("erreur lors de la suppression du user");
+                    reject(MyError_1.MyError.ERR_SQL_DELETE);
                 })
                     .catch((error) => {
                     reject(error);

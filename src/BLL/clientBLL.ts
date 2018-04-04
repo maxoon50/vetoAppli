@@ -56,7 +56,7 @@ export class ClientBLL {
                 let user: Client = new Client(req.body.nom, req.body.prenom, req.body.email);
                 dao.insertOne(user)
                     .then((client: Client) => {
-                        resolve(user);
+                        resolve(client);
                     })
                     .catch((error) => {
                         reject(error);
@@ -76,7 +76,7 @@ export class ClientBLL {
                     if(lineRemoved == 1){
                         resolve(lineRemoved);
                     }
-                    reject("erreur lors de la suppression du user");
+                    reject(MyError.ERR_SQL_DELETE);
                 })
                 .catch((error)=>{
                     reject(error);
@@ -116,18 +116,18 @@ export class ClientBLL {
 
     private validateClientWithID : (req, errors: BusinessError) => void = (req, errors) =>{
 
-    if(req.body.nom == null ||req.body.nom.length < 3 ){
-            errors.addErreur(MyError.CONSTR_CLIENT_NOM);
-    }
-    if(req.body.prenom == null ||req.body.prenom.length < 3 ){
-            errors.addErreur(MyError.CONSTR_CLIENT_PRENOM);
-    }
-    if(req.body.email == null ||!this.validateEmail(req.body.email) ){
-            errors.addErreur(MyError.CONSTR_CLIENT_EMAIL);
-    }
-    if(req.body.id == null || !(req.body.id === parseInt(req.body.id, 10))){
-            errors.addErreur(MyError.CONSTR_CLIENT_ID);
-    }
+        if(req.body.nom == null ||req.body.nom.length < 3 ){
+                errors.addErreur(MyError.CONSTR_CLIENT_NOM);
+        }
+        if(req.body.prenom == null ||req.body.prenom.length < 3 ){
+                errors.addErreur(MyError.CONSTR_CLIENT_PRENOM);
+        }
+        if(req.body.email == null ||!this.validateEmail(req.body.email) ){
+                errors.addErreur(MyError.CONSTR_CLIENT_EMAIL);
+        }
+        if(req.body.id == null || !(req.body.id === parseInt(req.body.id, 10))){
+                errors.addErreur(MyError.CONSTR_CLIENT_ID);
+        }
     }
 
     private validateClient: (req, errors: BusinessError) => void = (req, errors) =>{

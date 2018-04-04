@@ -1,6 +1,7 @@
 import {Utilisateur} from "../BO/utilisateur";
 import {DAOUser} from '../DAL/utilisateurDAO';
 import {Error } from '../Enums/Error';
+import {MyError} from "../Errors/MyError";
 
 
 export class UtilisateurBLL {
@@ -16,10 +17,10 @@ export class UtilisateurBLL {
                 if(user.password == pPassword){
                     resolve(user);
                 }
-                reject({error:Error.NotFound});
+                    reject({error:Error.NotFound});
                 })
                 .catch((error)=>{
-                reject(error);
+                    reject(error);
             })
         })
     }
@@ -91,7 +92,7 @@ export class UtilisateurBLL {
                     if(lineRemoved == 1){
                         resolve(lineRemoved);
                     }
-                    reject("erreur lors de la suppression du user");
+                    reject(MyError.ERR_SQL_DELETE);
                 })
                 .catch((error)=>{
                     reject(error);

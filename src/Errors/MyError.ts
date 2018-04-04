@@ -1,7 +1,15 @@
 export class MyError {
 
-    public static ERROR_INSERT_DB = "erreur lors de l'insertion dans la db";
+    ///////////////////////////// ERREURS SQL ///////////////////////////////
 
+
+    public static ERR_SQL_INSERT = "Erreur lors de l'insert sql";
+
+    public static ERR_SQL_UPDATE = "Erreur lors de l'update sql";
+
+    public static ERR_SQL_DELETE = "Erreur lors du delete sql";
+
+    public static ERR_SQL_ADD = "Erreur lors de l'add sql";
 
     ///////////////////////////// CONTRAINTES METIER ///////////////////////////////
 
@@ -12,6 +20,9 @@ export class MyError {
     public static CONSTR_CLIENT_EMAIL = "merci de renseigner un email correct";
 
     public static CONSTR_CLIENT_ID = "l'id renseigné est incorrect";
+
+
+
 
 
 

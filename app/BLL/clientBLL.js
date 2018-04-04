@@ -42,7 +42,7 @@ class ClientBLL {
                     let user = new Client_1.Client(req.body.nom, req.body.prenom, req.body.email);
                     dao.insertOne(user)
                         .then((client) => {
-                        resolve(user);
+                        resolve(client);
                     })
                         .catch((error) => {
                         reject(error);
@@ -58,7 +58,7 @@ class ClientBLL {
                     if (lineRemoved == 1) {
                         resolve(lineRemoved);
                     }
-                    reject("erreur lors de la suppression du user");
+                    reject(MyError_1.MyError.ERR_SQL_DELETE);
                 })
                     .catch((error) => {
                     reject(error);
