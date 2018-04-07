@@ -25,6 +25,18 @@ export class MyError {
     public static CLIENT_NOT_FOUND = "ce client n'existe pas";
 
 
+    ///////////////////////// ARGTS NULL //////////////////////////////////////////
+
+    public static NULL_ARGUMENT = "merci de renseigner une valeur valide";
+
+
+    //////////////////////// DB UNREACHABLE ///////////////////////////////////////
+
+    public static ERR_DATABASE = "la database n'est pas joignable";
+
+
+
+
 
 
 

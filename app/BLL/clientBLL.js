@@ -14,7 +14,7 @@ class ClientBLL {
                     resolve(users);
                 })
                     .catch((error) => {
-                    reject(error);
+                    reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                 });
             });
         };
@@ -26,20 +26,25 @@ class ClientBLL {
                     resolve(client);
                 })
                     .catch((error) => {
-                    reject(error);
+                    reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                 });
             });
         };
         this.getAllByName = (name) => {
             let dao = new clientDAO_1.ClientDAO();
             return new Promise((resolve, reject) => {
-                dao.getAllByName(name)
-                    .then((client) => {
-                    resolve(client);
-                })
-                    .catch((error) => {
-                    reject(error);
-                });
+                if (name == null || name.trim().length == 0) {
+                    reject(MyError_1.MyError.NULL_ARGUMENT);
+                }
+                else {
+                    dao.getAllByName(name)
+                        .then((client) => {
+                        resolve(client);
+                    })
+                        .catch((error) => {
+                        reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
+                    });
+                }
             });
         };
         this.addClient = (req) => {
@@ -57,7 +62,7 @@ class ClientBLL {
                         resolve(client);
                     })
                         .catch((error) => {
-                        reject(error);
+                        reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                     });
                 }
             });
@@ -73,7 +78,7 @@ class ClientBLL {
                     reject(MyError_1.MyError.ERR_SQL_DELETE);
                 })
                     .catch((error) => {
-                    reject(error);
+                    reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                 });
             });
         };
@@ -95,7 +100,7 @@ class ClientBLL {
                         });
                     })
                         .catch((error) => {
-                        reject(error);
+                        reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                     });
                 }
             });

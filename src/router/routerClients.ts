@@ -13,7 +13,7 @@ routerHome.get('/get-client/:nom', (req, res)=>{
 
     clientManager.getAllByName(req.params.nom)
         .then((response)=>{
-            console.log(response);
+            return response;
         })
         .catch((error) =>{
             console.log(error)

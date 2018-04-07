@@ -18,7 +18,7 @@ export class ClientBLL {
                     resolve(users);
                 })
                 .catch((error)=>{
-                    reject(error);
+                    reject({error: MyError.ERR_DATABASE, detail: error});
                 })
         })
 
@@ -35,7 +35,7 @@ export class ClientBLL {
                     resolve(client);
                 })
                 .catch((error)=>{
-                    reject(error);
+                    reject({error: MyError.ERR_DATABASE, detail: error});
                 })
         })
 
@@ -46,13 +46,19 @@ export class ClientBLL {
         let dao  = new ClientDAO();
 
         return new Promise((resolve, reject) =>{
-            dao.getAllByName(name)
-                .then((client : Client[])=>{
-                    resolve(client);
-                })
-                .catch((error)=>{
-                    reject(error);
-                })
+
+            if(name == null || name.trim().length == 0){
+                reject(MyError.NULL_ARGUMENT);
+            }else{
+                dao.getAllByName(name)
+                    .then((client : Client[])=>{
+                        resolve(client);
+                    })
+                    .catch((error)=>{
+                        reject({error: MyError.ERR_DATABASE, detail: error});
+                    })
+            }
+
         })
 
     }
@@ -75,7 +81,7 @@ export class ClientBLL {
                         resolve(client);
                     })
                     .catch((error) => {
-                        reject(error);
+                        reject({error: MyError.ERR_DATABASE, detail: error});
                     })
             }
         })
@@ -95,7 +101,7 @@ export class ClientBLL {
                     reject(MyError.ERR_SQL_DELETE);
                 })
                 .catch((error)=>{
-                    reject(error);
+                    reject({error: MyError.ERR_DATABASE, detail: error});
                 })
         })
     }
@@ -122,7 +128,7 @@ export class ClientBLL {
                             });
                         })
                         .catch((error) => {
-                            reject(error);
+                            reject({error: MyError.ERR_DATABASE, detail: error});
                         })
                 }
         })

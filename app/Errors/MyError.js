@@ -11,5 +11,7 @@ MyError.CONSTR_CLIENT_PRENOM = "le prénom renseigné doit comporter au minimum 
 MyError.CONSTR_CLIENT_EMAIL = "merci de renseigner un email correct";
 MyError.CONSTR_CLIENT_ID = "l'id renseigné est incorrect";
 MyError.CLIENT_NOT_FOUND = "ce client n'existe pas";
+MyError.NULL_ARGUMENT = "merci de renseigner une valeur valide";
+MyError.ERR_DATABASE = "la database n'est pas joignable";
 exports.MyError = MyError;
 //# sourceMappingURL=MyError.js.map

@@ -17,7 +17,7 @@ class UtilisateurBLL {
                     reject({ error: Error_1.Error.NotFound });
                 })
                     .catch((error) => {
-                    reject(error);
+                    reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                 });
             });
         };
@@ -29,7 +29,7 @@ class UtilisateurBLL {
                     resolve(users);
                 })
                     .catch((error) => {
-                    reject(error);
+                    reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                 });
             });
         };
@@ -41,7 +41,7 @@ class UtilisateurBLL {
                     resolve(user);
                 })
                     .catch((error) => {
-                    reject(error);
+                    reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                 });
             });
         };
@@ -55,7 +55,7 @@ class UtilisateurBLL {
                         resolve(user);
                     })
                         .catch((error) => {
-                        reject(error);
+                        reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                     });
                 }
                 else {
@@ -74,7 +74,7 @@ class UtilisateurBLL {
                     reject(MyError_1.MyError.ERR_SQL_DELETE);
                 })
                     .catch((error) => {
-                    reject(error);
+                    reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                 });
             });
         };
@@ -91,7 +91,7 @@ class UtilisateurBLL {
                         });
                     })
                         .catch((error) => {
-                        reject(error);
+                        reject({ error: MyError_1.MyError.ERR_DATABASE, detail: error });
                     });
                 }
                 else {

@@ -20,7 +20,7 @@ export class UtilisateurBLL {
                     reject({error:Error.NotFound});
                 })
                 .catch((error)=>{
-                    reject(error);
+                    reject({error: MyError.ERR_DATABASE, detail: error});
             })
         })
     }
@@ -36,7 +36,7 @@ export class UtilisateurBLL {
                     resolve(users);
                 })
                  .catch((error)=>{
-                    reject(error);
+                     reject({error: MyError.ERR_DATABASE, detail: error});
                  })
         })
 
@@ -53,7 +53,7 @@ export class UtilisateurBLL {
                     resolve(user);
                 })
                 .catch((error)=>{
-                    reject(error);
+                    reject({error: MyError.ERR_DATABASE, detail: error});
                 })
         })
 
@@ -73,7 +73,7 @@ export class UtilisateurBLL {
                         resolve(user);
                     })
                     .catch((error)=>{
-                        reject(error);
+                        reject({error: MyError.ERR_DATABASE, detail: error});
                     })
             }else{
                 reject("erreur, merci de vérifier que les champs renseigné soient corrects");
@@ -95,7 +95,7 @@ export class UtilisateurBLL {
                     reject(MyError.ERR_SQL_DELETE);
                 })
                 .catch((error)=>{
-                    reject(error);
+                    reject({error: MyError.ERR_DATABASE, detail: error});
                 })
         })
     }
@@ -118,7 +118,7 @@ export class UtilisateurBLL {
                         });
                     })
                     .catch((error) => {
-                        reject(error);
+                        reject({error: MyError.ERR_DATABASE, detail: error});
                     })
             }else{
                 reject("erreur, merci de vérifier que les champs renseignés soient corrects");
