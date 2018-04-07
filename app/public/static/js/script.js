@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     const USERS_URL_REDIRECT = "http://localhost:3000/users/";
+    const GET_CLIENTS_BY_NAME = "http://localhost:3000/clients/get-clients/";
 
 
     ////////----------------EVENTS----------------------////////
@@ -11,7 +12,7 @@ $(document).ready(function(){
     })
 
 
-    $('.modal').on('shown.bs.modal', function (e) {
+    $('.modal').on('shown.bs.modal', function () {
         fillModalWithData($(this));
     })
 
@@ -25,6 +26,19 @@ $(document).ready(function(){
         addUser($(this), $(this).attr("action"));
     })
 
+    $("#searchClient").on('input',function(){
+        let container =$("#js-result-list");
+
+        if($(this).val().trim().length > 0){
+            getClientsByName($(this).val());
+        }else{
+            container.empty();
+        }
+    })
+
+    $(document).on('click', '.js-get-client', function(e){
+        console.log("element clicked bb")
+    })
 
     ////////----------------END EVENTS----------------------////////
 
@@ -88,6 +102,19 @@ $(document).ready(function(){
             })
     }
 
+    function getClientsByName(name){
+        $.ajax({
+            method: "GET",
+            url: GET_CLIENTS_BY_NAME+name,
+        })
+            .done(function( listeClients ) {
+               displayClients((JSON.parse(listeClients)).clients);
+            })
+            .fail(function(err){
+                alert("erreur, merci de contacter l'administrateur");
+            })
+    }
+
     ////////----------------END AJAX REQUESTS----------------------////////
 
 
@@ -117,6 +144,14 @@ $(document).ready(function(){
         $('.table-line').attr("data-pseudo", user.pseudo);
         $('.table-line').attr("data-password", user.password);
         $('.table-line').attr("data-role", user.role);
+    }
+
+    function displayClients(listeClients){
+        let container =$("#js-result-list");
+        container.empty();
+        for(var i = 0; i<listeClients.length; i++){
+            container.append("<a href='/clients/get-client/"+ listeClients[i].id +"'><p class='result-list'>" + listeClients[i].nom + " " +listeClients[i].prenom + "<p></a>");
+        }
     }
 
 

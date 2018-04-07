@@ -11,13 +11,15 @@
         <% include ./partials/header.ejs   %>
         <div class="container main">
           <div class="row col-12 mb-5">
-                <form action="/clients/searchByName"  method="post" id="formClient">
+
                         <div class="form-group">
                           <label for="exampleInputEmail1">Chercher un client:</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom du client" name="nomClient">
+                          <input type="text" class="form-control" id="searchClient" aria-describedby="nomClient" placeholder="Nom du client" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+                            <div id="js-result-list">
+
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+
           </div>
        
           <p class="alert_unfound alert alert-warning hide">Il n'y a pas de résultat pour cette recherche.</p>

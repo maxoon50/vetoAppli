@@ -5,11 +5,11 @@ const clientBLL_1 = require("../BLL/clientBLL");
 routerHome.get('/', (req, res) => {
     res.render("client.ejs");
 });
-routerHome.get('/get-client/:nom', (req, res) => {
+routerHome.get('/get-clients/:nom', (req, res) => {
     let clientManager = new clientBLL_1.ClientBLL();
     clientManager.getAllByName(req.params.nom)
-        .then((response) => {
-        return response;
+        .then((listeClients) => {
+        res.send(JSON.stringify({ clients: listeClients, error: null }));
     })
         .catch((error) => {
         console.log(error);

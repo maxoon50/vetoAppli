@@ -54,4 +54,14 @@ body {
   position: absolute !important;
   top: 100px !important;
 }
+.result-list{
+  background-color: white;
+  padding-left: 10px;
+  border: 0.5px solid;
+  border-color: lightgrey;
+  margin-bottom: 0px;
+}
+.result-list:hover{
+  cursor: pointer;
+}
 

@@ -15,6 +15,7 @@ export class ClientBLL {
         return new Promise((resolve, reject) =>{
             dao.getAll()
                 .then((users)=>{
+                    console.log(users)
                     resolve(users);
                 })
                 .catch((error)=>{
