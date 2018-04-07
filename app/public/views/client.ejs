@@ -22,9 +22,23 @@
 
           </div>
             <div>
-                <button type="button" class="btn btn-info" >
-                    Ajouter un client
-                </button>
+                <form action="/clients/add-client" method="post">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" class="form-control" id="prenom" placeholder="Prenom" name="prenom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Ajouter un client</button>
+                </form>
+
             </div>
        
           <p class="alert_unfound alert alert-warning hide">Il n'y a pas de résultat pour cette recherche.</p>

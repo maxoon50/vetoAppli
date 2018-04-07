@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c6e4a1e-22e2-4847-be8f-ef220d5bac92" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/DAL/clientDAO.js" afterPath="$PROJECT_DIR$/app/DAL/clientDAO.js" />
-      <change beforePath="$PROJECT_DIR$/app/DAL/clientDAO.js.map" afterPath="$PROJECT_DIR$/app/DAL/clientDAO.js.map" />
       <change beforePath="$PROJECT_DIR$/app/public/views/client.ejs" afterPath="$PROJECT_DIR$/app/public/views/client.ejs" />
-      <change beforePath="$PROJECT_DIR$/app/public/views/clientDetails.ejs" afterPath="$PROJECT_DIR$/app/public/views/clientDetails.ejs" />
-      <change beforePath="$PROJECT_DIR$/app/router/routerClients.js" afterPath="$PROJECT_DIR$/app/router/routerClients.js" />
-      <change beforePath="$PROJECT_DIR$/app/router/routerClients.js.map" afterPath="$PROJECT_DIR$/app/router/routerClients.js.map" />
-      <change beforePath="$PROJECT_DIR$/src/DAL/clientDAO.ts" afterPath="$PROJECT_DIR$/src/DAL/clientDAO.ts" />
-      <change beforePath="$PROJECT_DIR$/src/router/routerClients.ts" afterPath="$PROJECT_DIR$/src/router/routerClients.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,8 +59,8 @@
       <file leaf-file-name="client.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/public/views/client.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="199">
+              <caret line="24" column="63" lean-forward="false" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -362,12 +355,12 @@
       <workItem from="1522083434254" duration="6295000" />
       <workItem from="1522256300780" duration="4543000" />
       <workItem from="1522785891861" duration="973000" />
-      <workItem from="1522872206544" duration="9184000" />
+      <workItem from="1522872206544" duration="9495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45631000" />
+    <option name="totallyTimeSpent" value="45942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="107" y="0" width="1778" height="1075" extended-state="0" />
@@ -682,8 +675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/views/client.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="37" lean-forward="false" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        <state relative-caret-position="199">
+          <caret line="24" column="63" lean-forward="false" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
           <folding />
         </state>
       </provider>
