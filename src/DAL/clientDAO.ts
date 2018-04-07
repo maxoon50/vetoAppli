@@ -105,7 +105,7 @@ export class ClientDAO implements DALInterface<Client>{
     public getById: (id: number) => Promise<Client> = (id)=>{
         return new Promise((resolve,reject)=>{
 
-            connexion(this.TABLE).where('id', id)
+            connexion(this.TABLE).where('id_client', id)
 
                 .then((result)=>{
                     if(result.length){

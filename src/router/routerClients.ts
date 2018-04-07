@@ -20,6 +20,20 @@ routerHome.get('/get-clients/:nom', (req, res)=>{
         })
 })
 
+routerHome.get('/get-client/:id', (req, res)=>{
+
+    let clientManager = new ClientBLL();
+
+    clientManager.getById(req.params.id)
+        .then((client)=>{
+            res.render('clientDetails.ejs', {client, error: null});
+        })
+        .catch((error) =>{
+            console.log(error)
+        })
+})
+
+
 
 
 export = routerHome;

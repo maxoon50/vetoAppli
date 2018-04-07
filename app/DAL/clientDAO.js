@@ -70,7 +70,7 @@ class ClientDAO {
         };
         this.getById = (id) => {
             return new Promise((resolve, reject) => {
-                connexion(this.TABLE).where('id', id)
+                connexion(this.TABLE).where('id_client', id)
                     .then((result) => {
                     if (result.length) {
                         let r = result[0];

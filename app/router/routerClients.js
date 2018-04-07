@@ -15,5 +15,15 @@ routerHome.get('/get-clients/:nom', (req, res) => {
         console.log(error);
     });
 });
+routerHome.get('/get-client/:id', (req, res) => {
+    let clientManager = new clientBLL_1.ClientBLL();
+    clientManager.getById(req.params.id)
+        .then((client) => {
+        res.render('clientDetails.ejs', { client, error: null });
+    })
+        .catch((error) => {
+        console.log(error);
+    });
+});
 module.exports = routerHome;
 //# sourceMappingURL=routerClients.js.map
