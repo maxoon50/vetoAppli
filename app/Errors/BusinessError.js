@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const MyError_1 = require("./MyError");
 class BusinessError extends Error {
     constructor() {
         super();
@@ -8,7 +7,7 @@ class BusinessError extends Error {
         this.listeErreurs = [];
     }
     addErreur(err) {
-        this.listeErreurs.push(MyError_1.MyError);
+        this.listeErreurs.push(err);
     }
     getErreurs() {
         return this.listeErreurs;

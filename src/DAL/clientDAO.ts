@@ -26,7 +26,7 @@ export class ClientDAO implements DALInterface<Client>{
                     prenom: client.prenom,
                     email: client.email
                 })
-                .returning('id')
+                .returning('id_client')
                 .then((id)=>{
                     resolve(new Client(client.nom, client.prenom, client.email, id));
                 })
@@ -44,7 +44,7 @@ export class ClientDAO implements DALInterface<Client>{
 
         return new Promise((resolve, reject)=>{
             connexion(this.TABLE)
-                .where('id', id)
+                .where('id_client', id)
                 .del()
                 .then((response)=>{
                     resolve(response);
@@ -61,7 +61,7 @@ export class ClientDAO implements DALInterface<Client>{
 
         return new Promise((resolve, reject)=>{
             connexion(this.TABLE)
-                .where('id', client.id)
+                .where('id_client', client.id)
                 .update({
                     nom: client.nom,
                     prenom: client.prenom,
@@ -134,7 +134,7 @@ export class ClientDAO implements DALInterface<Client>{
                     let listeClients = [];
 
                     if(result.length){
-                        console.log(result)
+
                         for(let i = 0; i<result.length; i++){
                             let r = result[i];
                             let client = new Client(r.nom, r.prenom, r.email ,r.id_client );

@@ -1,29 +1,39 @@
 "use strict";
 const express = require('express');
-const routerHome = express.Router();
+const routerClient = express.Router();
 const clientBLL_1 = require("../BLL/clientBLL");
-routerHome.get('/', (req, res) => {
-    res.render("client.ejs");
+routerClient.get('/', (req, res) => {
+    res.render("client.ejs", { errors: null });
 });
-routerHome.get('/get-clients/:nom', (req, res) => {
+routerClient.get('/get-clients/:nom', (req, res) => {
     let clientManager = new clientBLL_1.ClientBLL();
     clientManager.getAllByName(req.params.nom)
         .then((listeClients) => {
-        res.send(JSON.stringify({ clients: listeClients, error: null }));
+        res.send(JSON.stringify({ clients: listeClients, errors: null }));
     })
         .catch((error) => {
         console.log(error);
     });
 });
-routerHome.get('/get-client/:id', (req, res) => {
+routerClient.get('/get-client/:id', (req, res) => {
     let clientManager = new clientBLL_1.ClientBLL();
     clientManager.getById(req.params.id)
         .then((client) => {
-        res.render('clientDetails.ejs', { client, error: null });
+        res.render('clientDetails.ejs', { client, errors: null });
     })
         .catch((error) => {
         console.log(error);
     });
 });
-module.exports = routerHome;
+routerClient.post('/add', (req, res) => {
+    let clientManager = new clientBLL_1.ClientBLL();
+    clientManager.addClient(req)
+        .then((client) => {
+        res.render('clientDetails.ejs', { client, errors: null });
+    })
+        .catch((error) => {
+        res.render("client.ejs", { errors: error.error });
+    });
+});
+module.exports = routerClient;
 //# sourceMappingURL=routerClients.js.map

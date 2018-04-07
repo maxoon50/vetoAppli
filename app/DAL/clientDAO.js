@@ -14,7 +14,7 @@ class ClientDAO {
                     prenom: client.prenom,
                     email: client.email
                 })
-                    .returning('id')
+                    .returning('id_client')
                     .then((id) => {
                     resolve(new client_1.Client(client.nom, client.prenom, client.email, id));
                 })
@@ -26,7 +26,7 @@ class ClientDAO {
         this.remove = (id) => {
             return new Promise((resolve, reject) => {
                 connexion(this.TABLE)
-                    .where('id', id)
+                    .where('id_client', id)
                     .del()
                     .then((response) => {
                     resolve(response);
@@ -39,7 +39,7 @@ class ClientDAO {
         this.update = (client) => {
             return new Promise((resolve, reject) => {
                 connexion(this.TABLE)
-                    .where('id', client.id)
+                    .where('id_client', client.id)
                     .update({
                     nom: client.nom,
                     prenom: client.prenom,
@@ -90,7 +90,6 @@ class ClientDAO {
                     .then((result) => {
                     let listeClients = [];
                     if (result.length) {
-                        console.log(result);
                         for (let i = 0; i < result.length; i++) {
                             let r = result[i];
                             let client = new client_1.Client(r.nom, r.prenom, r.email, r.id_client);

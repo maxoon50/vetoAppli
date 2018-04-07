@@ -2,7 +2,7 @@ import {MyError} from "./MyError";
 
 export class BusinessError extends Error {
 
-    private listeErreurs : MyError[] ;
+    private listeErreurs : string[] ;
 
     constructor() {
         super();
@@ -10,8 +10,8 @@ export class BusinessError extends Error {
         this.listeErreurs = [];
     }
 
-    public addErreur(err: MyError) {
-        this.listeErreurs.push(MyError);
+    public addErreur(err: string) {
+        this.listeErreurs.push(err);
     }
 
     public getErreurs() {
