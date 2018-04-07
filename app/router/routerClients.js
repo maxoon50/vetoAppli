@@ -7,7 +7,7 @@ routerHome.get('/', (req, res) => {
 });
 routerHome.get('/get-client/:nom', (req, res) => {
     let clientManager = new clientBLL_1.ClientBLL();
-    clientManager.getByName(req.params.nom)
+    clientManager.getAllByName(req.params.nom)
         .then((response) => {
         console.log(response);
     })

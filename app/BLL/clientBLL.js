@@ -30,10 +30,10 @@ class ClientBLL {
                 });
             });
         };
-        this.getByName = (name) => {
+        this.getAllByName = (name) => {
             let dao = new clientDAO_1.ClientDAO();
             return new Promise((resolve, reject) => {
-                dao.getByName(name)
+                dao.getAllByName(name)
                     .then((client) => {
                     resolve(client);
                 })

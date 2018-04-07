@@ -41,13 +41,13 @@ export class ClientBLL {
 
     }
 
-    public getByName : (name : string) => Promise<Client> = (name)=> {
+    public getAllByName : (name : string) => Promise<Client[]> = (name)=> {
 
         let dao  = new ClientDAO();
 
         return new Promise((resolve, reject) =>{
-            dao.getByName(name)
-                .then((client : Client)=>{
+            dao.getAllByName(name)
+                .then((client : Client[])=>{
                     resolve(client);
                 })
                 .catch((error)=>{

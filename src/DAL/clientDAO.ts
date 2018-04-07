@@ -124,17 +124,23 @@ export class ClientDAO implements DALInterface<Client>{
 
     ///////////////////////////////////////////////////////////////////////////////////////
 
-    public getByName : (nom: string) => Promise<Client> = (nom : string)=>{
+    public getAllByName : (nom: string) => Promise<Client[]> = (nom : string)=>{
 
         return new Promise((resolve,reject)=>{
 
-            connexion(this.TABLE).where('nom', nom)
-
+            connexion(this.TABLE).where('nom','like', nom+'%')
                 .then((result)=>{
+
+                    let listeClients = [];
+
                     if(result.length){
-                        let r = result[0];
-                        let client = new Client(r.nom, r.prenom, r.email ,r.id_client );
-                        resolve(client);
+                        console.log(result)
+                        for(let i = 0; i<result.length; i++){
+                            let r = result[i];
+                            let client = new Client(r.nom, r.prenom, r.email ,r.id_client );
+                            listeClients.push(client);
+                        }
+                        resolve(listeClients);
                     }
                     reject({error : MyError.CLIENT_NOT_FOUND});
                 })

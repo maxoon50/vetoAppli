@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c6e4a1e-22e2-4847-be8f-ef220d5bac92" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/BLL/clientBLL.js" afterPath="$PROJECT_DIR$/app/BLL/clientBLL.js" />
       <change beforePath="$PROJECT_DIR$/app/BLL/clientBLL.js.map" afterPath="$PROJECT_DIR$/app/BLL/clientBLL.js.map" />
       <change beforePath="$PROJECT_DIR$/app/DAL/clientDAO.js" afterPath="$PROJECT_DIR$/app/DAL/clientDAO.js" />
       <change beforePath="$PROJECT_DIR$/app/DAL/clientDAO.js.map" afterPath="$PROJECT_DIR$/app/DAL/clientDAO.js.map" />
-      <change beforePath="$PROJECT_DIR$/app/Errors/MyError.js" afterPath="$PROJECT_DIR$/app/Errors/MyError.js" />
-      <change beforePath="$PROJECT_DIR$/app/Errors/MyError.js.map" afterPath="$PROJECT_DIR$/app/Errors/MyError.js.map" />
       <change beforePath="$PROJECT_DIR$/app/router/routerClients.js" afterPath="$PROJECT_DIR$/app/router/routerClients.js" />
       <change beforePath="$PROJECT_DIR$/app/router/routerClients.js.map" afterPath="$PROJECT_DIR$/app/router/routerClients.js.map" />
       <change beforePath="$PROJECT_DIR$/src/BLL/clientBLL.ts" afterPath="$PROJECT_DIR$/src/BLL/clientBLL.ts" />
       <change beforePath="$PROJECT_DIR$/src/DAL/clientDAO.ts" afterPath="$PROJECT_DIR$/src/DAL/clientDAO.ts" />
-      <change beforePath="$PROJECT_DIR$/src/Errors/MyError.ts" afterPath="$PROJECT_DIR$/src/Errors/MyError.ts" />
       <change beforePath="$PROJECT_DIR$/src/router/routerClients.ts" afterPath="$PROJECT_DIR$/src/router/routerClients.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -83,8 +79,8 @@
       <file leaf-file-name="routerClients.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router/routerClients.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+            <state relative-caret-position="144">
+              <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -93,8 +89,8 @@
       <file leaf-file-name="clientBLL.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BLL/clientBLL.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            <state relative-caret-position="-566">
+              <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -105,8 +101,8 @@
       <file leaf-file-name="clientDAO.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DAL/clientDAO.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="138" column="63" lean-forward="false" selection-start-line="138" selection-start-column="63" selection-end-line="138" selection-end-column="63" />
+            <state relative-caret-position="1742">
+              <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding>
                 <element signature="e#80#118#0" expanded="true" />
               </folding>
@@ -174,11 +170,11 @@
         <option value="$PROJECT_DIR$/src/Errors/BusinessError.ts" />
         <option value="$PROJECT_DIR$/src/BLL/utilisateurBLL.ts" />
         <option value="$PROJECT_DIR$/config.json" />
-        <option value="$PROJECT_DIR$/src/BLL/clientBLL.ts" />
-        <option value="$PROJECT_DIR$/src/router/routerClients.ts" />
         <option value="$PROJECT_DIR$/src/BO/client.ts" />
         <option value="$PROJECT_DIR$/src/Errors/MyError.ts" />
+        <option value="$PROJECT_DIR$/src/router/routerClients.ts" />
         <option value="$PROJECT_DIR$/src/DAL/clientDAO.ts" />
+        <option value="$PROJECT_DIR$/src/BLL/clientBLL.ts" />
       </list>
     </option>
   </component>
@@ -332,12 +328,12 @@
       <workItem from="1522083434254" duration="6295000" />
       <workItem from="1522256300780" duration="4543000" />
       <workItem from="1522785891861" duration="973000" />
-      <workItem from="1522872206544" duration="2689000" />
+      <workItem from="1522872206544" duration="4597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39136000" />
+    <option name="totallyTimeSpent" value="41044000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="107" y="0" width="1778" height="1075" extended-state="0" />
@@ -592,26 +588,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/routerClients.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="20" lean-forward="true" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BO/utilisateur.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BO/client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
           <folding />
         </state>
       </provider>
@@ -632,10 +612,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/router/routerClients.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BO/client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="77" lean-forward="false" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DAL/clientDAO.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="138" column="63" lean-forward="false" selection-start-line="138" selection-start-column="63" selection-end-line="138" selection-end-column="63" />
+        <state relative-caret-position="1742">
+          <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding>
             <element signature="e#80#118#0" expanded="true" />
           </folding>
@@ -644,8 +640,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BLL/clientBLL.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+        <state relative-caret-position="-566">
+          <caret line="49" column="40" lean-forward="false" selection-start-line="49" selection-start-column="40" selection-end-line="49" selection-end-column="40" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

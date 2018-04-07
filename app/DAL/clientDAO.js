@@ -84,14 +84,19 @@ class ClientDAO {
                 });
             });
         };
-        this.getByName = (nom) => {
+        this.getAllByName = (nom) => {
             return new Promise((resolve, reject) => {
-                connexion(this.TABLE).where('nom', nom)
+                connexion(this.TABLE).where('nom', 'like', nom + '%')
                     .then((result) => {
+                    let listeClients = [];
                     if (result.length) {
-                        let r = result[0];
-                        let client = new client_1.Client(r.nom, r.prenom, r.email, r.id_client);
-                        resolve(client);
+                        console.log(result);
+                        for (let i = 0; i < result.length; i++) {
+                            let r = result[i];
+                            let client = new client_1.Client(r.nom, r.prenom, r.email, r.id_client);
+                            listeClients.push(client);
+                        }
+                        resolve(listeClients);
                     }
                     reject({ error: MyError_1.MyError.CLIENT_NOT_FOUND });
                 })
